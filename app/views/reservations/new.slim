@@ -1,0 +1,52 @@
+.container
+  script src="https://checkout.stripe.com/checkout.js"
+  .row
+    .form-wrapper
+      .large-6.columns
+        .signup-panel
+          p.welcome New Reservation
+          = simple_form_for @reservation do |f|
+            .row.collapse
+              .small-10.columns
+                = f.label :recipe
+                  = f.association :recipe, collection: @recipes, label_method: :title, :value_method => :id, :label => "Recipe", selected: params[:format]
+                   /f.input :recipe, @recipes, :id, :title,  selected: params[:format]
+            .row.collapse
+              .small-10.columns
+                = f.input :details
+            .row.collapse
+              .small-10.columns
+                = f.label :plates
+                = f.select :plates, options_for_select(Reservation::PLATE_NUMS)
+            .row.collapse
+              .small-10.columns
+                = f.input :date
+            .row.collapse
+              .small-10.columns
+                = f.label :time
+                = f.select :time, options_for_select(Reservation::LIST_TIME)
+            .row.collapse
+              .small-10.columns
+                = f.input :address, :required => true, input_html: { value: @user.address }
+            .row.collapse
+              .small-10.columns
+                = f.input :address2
+            .row.collapse
+              .small-10.columns
+                = f.input :city, :required => true, input_html: { value: @user.city }
+            .row.collapse
+              .small-10.columns
+                = f.input :state, :required => true, input_html: { value: @user.state }
+            .row.collapse
+              .small-10.columns
+                = f.input :zip, :required => true, input_html: { value: @user.zip }
+            .row.collapse
+              .small-10.columns
+                = f.input :phone, :required => true, input_html: { value: @user.phone }
+            .row.collapse
+              .small-10.columns
+                h1#payment $20.00
+            .row.collapse
+              .small-10.columns
+                <button style="display: block;" class="confirm btn btn-xl profile-continue-btn" id="continue">Continue</button>
+                /script.stripe-button data-amount='' data-description=("Pay for Reservation") data-key="#{Rails.configuration.stripe[:publishable_key]}" src="https://checkout.stripe.com/checkout.js"

@@ -1,0 +1,17 @@
+h1 My confirmations
+h2 Chef
+=> link_to 'Make confirmation', reservations_path
+
+
+
+#tabs
+  ul
+    li
+      a href="#fragment-1"  Reservations
+    li
+      a href="#fragment-2"  Profile
+
+  #fragment-1
+    = render 'reservations/current_reservations_chef'
+  #fragment-2
+    = render 'home/profile'

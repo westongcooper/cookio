@@ -1,0 +1,47 @@
+.container
+  .row
+    .col.m10.offset-m1.s12
+      h3.center-align
+        |Join The Party
+      .row
+        = form_for @user do |f|
+          .row
+            .input-field.col.m8.offset-m2.s12
+              i.material-icons.prefix.tiny.right-align
+                |star
+              i.material-icons.prefix
+                |email
+              = f.text_field :email, class:'validate'
+              = f.label :email
+          .row
+            .input-field.col.m6.s12
+              i.material-icons.prefix.tiny.right-align
+                |star
+              i.material-icons.prefix
+                |perm_identity
+              = f.text_field :first_name, class: 'validate'
+              = f.label :first_name
+            .input-field.col.m6.s12
+              i.material-icons.prefix.tiny.right-align
+                |star
+              i.material-icons.prefix
+              = f.text_field :last_name, class: 'validate'
+              = f.label :last_name
+          .row
+            .input-field.col.m6.s12
+              i.material-icons.prefix.tiny.right-align
+                |star
+              i.material-icons.prefix
+                |vpn_key
+              = f.password_field :password, class: 'validate'
+              = f.label :password
+            .input-field.col.m6.s12
+              i.material-icons.prefix.tiny.right-align
+                |star
+              i.material-icons.prefix
+              = f.password_field :password_confirmation, class: 'validate'
+              = f.label :password_confirmation, 'Password Again'
+          .row
+            =render 'sessions/submit'
+        | Already have an account?
+        == link_to "Login Here ", sessions_login_user_path

@@ -1,0 +1,32 @@
+.container
+  = render 'sessions/login'
+  p
+    | Don't have an account?
+    == link_to "Sign Up Here ", new_user_path
+/.container
+/  .row
+/    .col.m10.offset-m1.s12
+/      h3.center-align
+/        |Welcome
+/      .row
+/        = form_tag sessions_login_chef_path do
+/          .row
+/            .input-field.col.m8.s12.offset-m2
+/              i.material-icons.prefix
+/                |email
+/              = text_field_tag :email
+/              = label_tag :email
+/          .row
+/            .input-field.col.m8.s12.offset-m2
+/              i.material-icons.prefix
+/                |vpn_key
+/              = password_field_tag :password
+/              = label_tag :password
+/          .row
+/            <button class="btn-large waves-effect waves-light col s8 m6 offset-m3 offset-s2" type="submit" name="action">Submit
+/              <i class="material-icons right">send</i>
+/              </button>
+/
+/p
+/  | Don't have an account?
+/  == link_to "Sign Up Here ", new_chef_path

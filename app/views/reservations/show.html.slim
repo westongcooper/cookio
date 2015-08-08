@@ -1,0 +1,21 @@
+.reservation
+  h3 User: #{@reservation.user.first_name}
+  h3 Date: #{@reservation.date}
+  h3 Time: #{@reservation.time}
+  h3 Details:
+  = @reservation.details
+  h3 Recipe:
+  = @reservation.recipe.title
+
+  br /
+  .reserve
+    - if current_chef && @reservation.chef_id != current_chef.id
+      = link_to "reserve", @reservation, method: :patch
+  h3 Messages:
+  = render 'reservations/message'
+  - if @reservation.chef_id
+    = simple_form_for ([@reservation, @new_reservations_message]) do |f|
+      = f.input :subject
+      = f.input :message
+      = f.submit
+

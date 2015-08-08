@@ -1,0 +1,24 @@
+.row
+  .col.m10.offset-m1.s12
+    h3.center-align
+      |Welcome
+    .row
+      = form_tag @path do
+        .row
+          .input-field.col.m8.s12.offset-m2
+            i.material-icons.prefix.tiny.right-align
+              |star
+            i.material-icons.prefix
+              |email
+            = text_field_tag :email
+            = label_tag :email
+        .row
+          .input-field.col.m8.s12.offset-m2
+            i.material-icons.prefix.tiny.right-align
+              |star
+            i.material-icons.prefix
+              |vpn_key
+            = password_field_tag :password
+            = label_tag :password
+        .row
+          =render 'sessions/submit'
