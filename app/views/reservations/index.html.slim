@@ -27,7 +27,7 @@
                 = reservation.details
               = link_to 'More Information', reservation
   .current-reservations
-    h1 Show available reservations
+    h1 Available reservations
     .row
       - @available_reservations.each do |reservation|
         = div_for(reservation, class: 'card medium testing') do

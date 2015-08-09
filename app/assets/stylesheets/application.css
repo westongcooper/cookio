@@ -20,9 +20,13 @@
 */
 
 body{
-    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
-
+main {
+    flex: 1 0 auto;
+}
 label.error {
     color:#ef5350;
 }
@@ -95,4 +99,7 @@ textarea#input-field{
 }
 .card{
     overflow: auto;
+}
+ul.testing{
+    display: inline-block;
 }

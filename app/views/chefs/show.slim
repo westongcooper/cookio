@@ -1,10 +1,9 @@
 .container
-  h2 Chef
-  = link_to 'edit profile', edit_chef_path
-  h1 My confirmations
-  /=> link_to 'Confirm a Reservation', reservations_path
-  /= render 'reservations/current_reservations_chef'
-  
+  .centerize
+    h2 #{@chef.first_name +  " "+ @chef.last_name}
+  .centerize
+    h1 My Account
+
 
   .row
     .col.s12

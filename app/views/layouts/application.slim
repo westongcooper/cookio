@@ -12,7 +12,9 @@ html
     == csrf_meta_tags
   body
     == render 'home/navbar'
-    == yield
+    main
+      == yield
+    == render 'home/footer'
 
 
 
