@@ -19,9 +19,7 @@
 *= require select_box
 *= require_self
 */
-/*this is a test{*/
-    /**/
-/*}*/
+
 body{
     display: flex;
     min-height: 100vh;
