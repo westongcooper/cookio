@@ -1,63 +1,64 @@
-.row
-  .col.s12
-    ul.tabs
-      li.tab.col.s3
-        a.active href="#test1"  Inactive Chefs
-      li.tab.col.s3
-        a href="#test2"  Active Chefs
+.container
+  .row
+    .col.s12
+      ul.tabs
+        li.tab.col.s3
+          a.active href="#test1"  Inactive Chefs
+        li.tab.col.s3
+          a href="#test2"  Active Chefs
 
 
-  #test1.col.s12
+    #test1.col.s12
 
-    .chefs
-      - if @chefs_inactive.count > 0
-        h1 inactive chefs
-        .chefs-inactive
-          - @chefs_inactive.each do |chef|
-            = div_for(chef, class: 'row') do
-              .col.s12.m3
-                .card.red.lighten-5
-                  .card-chef.black-text
-                    span.card-title.black-text #{chef.first_name + ' ' +chef.last_name}
-                    p
-                      = chef.email
-                    p
-                      = chef.phone
-                    p
-                      = chef.address
-                    p
-                      = chef.address2
-                    p
-                      = chef.city
-                    p
-                      = chef.state
-                    p
-                      = chef.zip
-                  .card-action
-                    = link_to "toggle active", toggle_active_chef_path(chef.id)
+      .chefs.center-align
+        - if @chefs_inactive.count > 0
+          h1 inactive chefs
+          .chefs-inactive
+            - @chefs_inactive.each do |chef|
+              = div_for(chef, class: 'row testing l3 ') do
+                .col.s10
+                  .card.red.lighten-5
+                    .card-chef.black-text
+                      span.card-title.black-text #{chef.first_name + ' ' +chef.last_name}
+                      p
+                        = chef.email
+                      p
+                        = chef.phone
+                      p
+                        = chef.address
+                      p
+                        = chef.address2
+                      p
+                        = chef.city
+                      p
+                        = chef.state
+                      p
+                        = chef.zip
+                    .card-action
+                      = link_to "toggle active", toggle_active_chef_path(chef.id)
 
-  #test2.col.s12
-    .chefs-active
-      h1 active chefs
-      - @chefs_active.each do |chef|
-        = div_for(chef, class: 'row') do
-          .col.s12.m3
-            .card.blue.accent-2
-              .card-chef.white-text
-                span.card-title #{chef.first_name + ' ' +chef.last_name}
-                p
-                  = chef.email
-                p
-                  = chef.phone
-                p
-                  = chef.address
-                p
-                  = chef.address2
-                p
-                  = chef.city
-                p
-                  = chef.state
-                p
-                  = chef.zip
-              .card-action
-                = link_to "toggle active", toggle_active_chef_path(chef.id)
+    #test2.col.s12
+      .chefs-active.center-align
+        h1 active chefs
+        - @chefs_active.each do |chef|
+          = div_for(chef, class: 'row testing ') do
+            .col.s10
+              .card.blue.accent-2
+                .card-chef.white-text
+                  span.card-title #{chef.first_name + ' ' +chef.last_name}
+                  p
+                    = chef.email
+                  p
+                    = chef.phone
+                  p
+                    = chef.address
+                  p
+                    = chef.address2
+                  p
+                    = chef.city
+                  p
+                    = chef.state
+                  p
+                    = chef.zip
+                .card-action
+                  = link_to "toggle active", toggle_active_chef_path(chef.id)
