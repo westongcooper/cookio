@@ -16,6 +16,7 @@
 *= require animate
 *= require file_upload
 *= require select_box
+*= require nav_bar
 *= require_self
 */
 

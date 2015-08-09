@@ -33,14 +33,15 @@ function ready() {
     $('#payment').text(priceToDisplay);
     $('button span').text(priceToDisplay + " - Pay with card");
   });
+}
 
-
-
+if($('span.notice').text()!=""){
+  alert($('span.notice').text())
 }
 $(document).on('ready page:load', ready);
 $(function() {
   $('.datepicker').datepicker({
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 15 // Creates a dropdown of 15 years to control year
-  })});
+})});
 

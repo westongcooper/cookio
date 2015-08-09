@@ -16,6 +16,14 @@
   font-family: "Gotham-bold";
   src:font-url('GothamHTF-Bold2.ttf') format("truetype");
 }
+@font-face{
+  font-family: "ZonaPro";
+  src:font-url('ZonaPro.ttf') format("truetype");
+}
+@font-face{
+  font-family: "ZonaPro-thin";
+  src:font-url('ZonaPro-thin.ttf') format("truetype");
+}
 
 h1,h2,h3,h4,h5,h6{
   font-family:Knockout,sans-serif;
