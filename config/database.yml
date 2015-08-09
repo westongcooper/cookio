@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: Cookio_development
+  database: Feedme_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Cookio_test
+  database: Feedme_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,10 +80,6 @@ test:
 #
 production:
   <<: *default
-<<<<<<< HEAD
-  database: Cookio_production
-=======
   database: Feedme_production
->>>>>>> 59437144b0291c42f8ffd2cfaa8e07c48870517d
 #  username: Events
 #  password: <%= ENV['EVENTS_DATABASE_PASSWORD'] %>

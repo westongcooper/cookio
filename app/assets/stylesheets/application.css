@@ -14,12 +14,9 @@
 *= require jquery-ui
 *= require cookio
 *= require animate
-<<<<<<< HEAD
 *= require home
-=======
 *= require file_upload
 *= require select_box
->>>>>>> 59437144b0291c42f8ffd2cfaa8e07c48870517d
 *= require_self
 */
 
@@ -48,8 +45,7 @@ input[type="text"]
 {
     font-size:1.5rem;
 }
-<<<<<<< HEAD
-=======
+
 
 label.recipe_text{
     position:static;
@@ -102,4 +98,3 @@ textarea#input-field{
 .card{
     overflow: auto;
 }
->>>>>>> 59437144b0291c42f8ffd2cfaa8e07c48870517d

@@ -16,11 +16,8 @@
 //= require turbolinks
 //= require materialize
 //= require reservation
-<<<<<<< HEAD
 //= require home
-=======
 //= require Materialize/cards
->>>>>>> 59437144b0291c42f8ffd2cfaa8e07c48870517d
 // require_tree .
 
 function ready() {
@@ -47,4 +44,3 @@ $(function() {
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 15 // Creates a dropdown of 15 years to control year
   })});
-
