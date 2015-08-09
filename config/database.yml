@@ -80,6 +80,10 @@ test:
 #
 production:
   <<: *default
+<<<<<<< HEAD
   database: Cookio_production
+=======
+  database: Feedme_production
+>>>>>>> 59437144b0291c42f8ffd2cfaa8e07c48870517d
 #  username: Events
 #  password: <%= ENV['EVENTS_DATABASE_PASSWORD'] %>

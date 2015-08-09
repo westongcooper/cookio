@@ -11,13 +11,21 @@
  * file per style scope.
 * require materialize
 *= require materialize_init
-*= require cookio.scss
+*= require jquery-ui
+*= require cookio
 *= require animate
+<<<<<<< HEAD
 *= require home
+=======
+*= require file_upload
+*= require select_box
+>>>>>>> 59437144b0291c42f8ffd2cfaa8e07c48870517d
 *= require_self
 */
 
-
+body{
+    width: 100%;
+}
 
 label.error {
     color:#ef5350;
@@ -30,7 +38,9 @@ i.tiny{
     left:10px;
     color:#ef5350;
 }
-
+i.med{
+    font-size: 3rem !important;
+}
 select{
     display:inline;
 }
@@ -38,3 +48,58 @@ input[type="text"]
 {
     font-size:1.5rem;
 }
+<<<<<<< HEAD
+=======
+
+label.recipe_text{
+    position:static;
+}
+textarea#input-field{
+    height:100px;
+}
+.recipe_submit_button{
+    margin-top:15px;
+}
+
+
+.index-top {
+    background-image: url("https://s3.amazonaws.com/cookie-pics/ladycooking+copy.jpg");
+    height: 800px;
+    width:100%;
+    text-align: center;
+}
+.index-top p{
+    padding-top: 10% ;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 4rem;
+}
+.index-top a{
+    font-size: 3rem;
+    background-color: #004d40;
+    border-radius: 10px;
+}
+.box{
+    width:500px;
+    height: 400px;
+    margin-left: 1%;
+    padding: 0 0;
+}
+
+.testing{
+    display: inline-block;
+}
+.card-chefs{
+    height: 325px;
+    text-align: center;
+}
+.card-chefs ul{
+    text-align: center;
+}
+.centerize{
+    text-align: center;
+}
+.card{
+    overflow: auto;
+}
+>>>>>>> 59437144b0291c42f8ffd2cfaa8e07c48870517d

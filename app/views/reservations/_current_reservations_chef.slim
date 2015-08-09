@@ -1,11 +1,26 @@
-h1 My confirmations
-- @chef_confirmations.each do |confirmation|
-  = div_for(confirmation, class: 'my_confirmation') do
-    h3 User:  #{confirmation.chef.first_name}
-    h3 Date: #{confirmation.date}
-    h3 Time: #{confirmation.time}
-    h3 Details: #{confirmation.details}
-    h3 Recipe: #{confirmation.recipe.title}
-    br /
-    = link_to 'Show', confirmation
-    = link_to "Remove confirmation", confirmation, method: :delete, data: {confirm: "Are you sure you would like to delete this Resource?"}
+
+- @chef_confirmations.each do |reservation|
+  = div_for(reservation, class: 'card medium testing') do
+    .card-image.waves-effect.waves-block.waves-light
+      .activator
+        = image_tag(reservation.recipe.image)
+    .card-content
+      span.card-title.activator.grey-text.text-darken-4
+        = reservation.recipe.title
+        i.material-icons.right more_vert
+      p
+        = link_to 'More Information', reservation
+    .card-reveal
+      span.card-title.grey-text.text-darken-4
+        = reservation.recipe.title
+        i.material-icons.right close
+      h5 Customer: <span>#{reservation.user.name}</span>
+      h5 Chef: <span>#{reservation.chef.first_name}</span>
+      h5 Date: <span>#{reservation.date.to_s + " " + reservation.time.to_s}</span>
+      h5 Address: <span>#{reservation.address + " " + reservation.address2}</span>
+      h5 Details:
+      h6
+        = reservation.details
+      = link_to 'Show', reservation
+      <br>
+      = link_to "Remove Reservation", reservation, method: :delete, data: {confirm: "Are you sure you would like to delete this Reservation?"}

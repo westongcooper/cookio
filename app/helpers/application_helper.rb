@@ -1,4 +1,11 @@
 module ApplicationHelper
+  def date_mdY(date)
+    if date.nil?
+      ""
+    else
+      date.strftime("%m-%d-%Y")
+    end
+  end
   # render_module @reservations, :label => "ReservationLabel", template: "SmallTemplate"
   def render_module(*args)
     options = args.extract_options!
@@ -72,6 +79,8 @@ module ApplicationHelper
     end
   end
 end
+
+
 
 
 # -unless current_chef || current_user

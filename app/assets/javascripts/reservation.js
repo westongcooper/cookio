@@ -30,14 +30,13 @@ payAction = function(){
   var handler = StripeCheckout.configure({
     key: 'pk_test_e8QtgSkRSPlLShtgpcB72KyR',
     token: function(token) {
-
-      var total = parseInt($('#reservation_plates').val())*2000+'';
+      var plates = $('#reservation_plates').val();
+      var total = parseInt(plates)*2000+'';
       var time = $("#reservation_time").val();
-      var em = $("#reservation_date_2i").val();
-      var ed = $("#reservation_date_3i").val();
-      var ey = $("#reservation_date_1i").val();
-      var date = new Date(ey,em,ed);
-      var recipe = $("#reservation_recipe_id").val();
+      var date = $("#reservation_date").val();
+      date = date.split("/");
+      date = [date[1],date[0],date[2]].join('/');
+      var recipe = $("#reservation_recipe").val();
       var details = $('#reservation_details').val();
       var address = $("#reservation_address").val();
       var address2 = $("#reservation_address2").val();
@@ -46,7 +45,7 @@ payAction = function(){
       var zip = $("#reservation_zip").val();
       var phone = $("#reservation_phone").val();
       var postData = {reservation:
-        {amount:total,recipe_id:recipe,stripeToken:token.id,details:details,time:time,date:date,address:address,address2:address2,city:city,state:state,zip:zip,phone:phone}
+      {amount:total,recipe_id:recipe,plates:plates,stripeToken:token.id,details:details,time:time,date:date,address:address,address2:address2,city:city,state:state,zip:zip,phone:phone}
       };
       //var newPostdata = $('#new_reservation').serialize();
       //newPostdata.stripeToken = token.id;

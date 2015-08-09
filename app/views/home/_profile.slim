@@ -1,45 +1,74 @@
-.row
-  .form-wrapper
-    .large-6.columns
-      .signup-panel
-        = simple_form_for @profile do |f|
-          form
-            .row.collapse
-              .small-10.columns
-                = f.input :email
-            .row.collapse
-              .small-10.columns
-                = f.input :first_name
-            .row.collapse
-              .small-10.columns
-                = f.input :last_name
-            .row.collapse
-              .small-10.columns
-                = f.input :address
-            .row.collapse
-              .small-10.columns
-                = f.input :address2
-            .row.collapse
-              .small-10.columns
-                = f.input :city
-            .row.collapse
-              .small-10.columns
-                = f.input :state
-            .row.collapse
-              .small-10.columns
-                = f.input :zip
-            .row.collapse
-              .small-10.columns
-                = f.input :phone, as: :tel
-            .row.collapse
-              .small-10.columns
-                = f.input :password
-            .row.collapse
-              .small-10.columns
-                = f.input :password_confirmation
-            .row.collapse
-              .small-10.columns
-                = f.input :old_password
-            .row.collapse
-              .small-10.columns
-                = f.button :submit
+= form_for @profile do |f|
+  .row
+    .input-field.col.m8.offset-m2.s12
+      i.material-icons.prefix.tiny.right-align
+        |star
+      i.material-icons.prefix
+        |email
+      = f.text_field :email, class:'validate'
+      = label_field_active(@profile, f, 'email')
+  .row
+    .input-field.col.m6.s12
+      i.material-icons.prefix.tiny.right-align
+        |star
+      i.material-icons.prefix
+        |face
+      = f.text_field :first_name, class: 'validate'
+      = label_field_active(@profile, f, 'first_name')
+    .input-field.col.m6.s12
+      i.material-icons.prefix.tiny.right-align
+        |star
+      = f.text_field :last_name
+      = label_field_active(@profile, f, 'last_name')
+  .row
+    .input-field.col.m6.s12
+      i.material-icons.prefix.tiny.right-align
+        |star
+      i.material-icons.prefix
+        |location_on
+      = f.text_field :address, class: 'validate'
+      = label_field_active(@profile, f, 'address')
+    .input-field.col.m6.s12
+      i.material-icons.prefix.tiny.right-align
+      = f.text_field :address2, class: 'validate'
+      = label_field_active(@profile, f, 'address2')
+  .row
+    .input-field.col.m6.s12
+      i.material-icons.prefix.tiny.right-align
+        |star
+      = f.text_field :city, class: 'validate'
+      = label_field_active(@profile, f, 'city')
+    .input-field.col.m3.s6
+      i.material-icons.prefix.tiny.right-align
+        |star
+      = f.text_field :state, class: 'validate'
+      = label_field_active(@profile, f, 'state')
+    .input-field.col.m3.s6
+      i.material-icons.prefix.tiny.right-align
+        |star
+      = f.text_field :zip, class: 'validate'
+      = label_field_active(@profile, f, 'zip')
+  .row
+    .input-field.col.m6.s12
+      i.material-icons.prefix.tiny.right-align
+        |star
+      i.material-icons.prefix
+        |phonelink_ring
+      = f.text_field :phone, class: 'validate'
+      = label_field_active(@profile, f, 'phone')
+  .row
+    .input-field.col.m6.s12
+      i.material-icons.prefix.tiny.right-align
+        |star
+      i.material-icons.prefix
+        |vpn_key
+      = f.password_field :password, class: 'validate'
+      = label_field_active(@profile, f, 'password')
+    .input-field.col.m6.s12
+      i.material-icons.prefix.tiny.right-align
+        |star
+      i.material-icons.prefix
+      = f.password_field :password_confirmation, class: 'validate'
+      = label_field_active(@profile, f, 'password_confirmation')
+  .row
+    =render 'sessions/submit'

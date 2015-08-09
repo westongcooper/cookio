@@ -1,22 +1,25 @@
-= div_for(@recipes, class: 'recipe') do |recipe|
-  .recipe_title
-    = recipe.title
-    .admin_buttons
-      - if is_admin?
-        .destroy
-          = link_to "Destroy", recipe, method: :delete, data: { confirm: "Are you sure you would like to destroy this recipe?" }
-        .edit
-          = link_to "Edit", edit_recipe_path(recipe)
-  .recipe_image
-    = image_tag( recipe.image, height: '300', width: '300')
-  .recipe_ingredients
-    = content_tag :div do
-      -JSON.parse(recipe.ingredients).each_with_index do |item,index|
-        p
-          span
-            = (index + 1).to_s + ' - '
-          span
-            =item
-  .recipe_info
-    = recipe.recipe
-  hr
+.container
+ = div_for(@recipes, class: 'box testing') do |recipe|
+     .col.s12.m3
+      .card.green.darken-1
+        .card-chef.black-text
+          span.card-title.black-text #{recipe.title}
+          .admin_buttons
+            - if is_admin?
+              .destroy
+                = link_to "Destroy", recipe, method: :delete, data: {confirm: "Are you sure you would like to destroy this recipe?"}
+              .edit
+                = link_to "Edit", edit_recipe_path(recipe)
+            p.align-center
+              = image_tag(recipe.image, height: '300', width: '300')
+            .recipe_ingredients
+              = content_tag :div do
+
+                -JSON.parse(recipe.ingredients).each_with_index do |item, index|
+                  = if index >= 7
+                    = ' - '
+                    span
+                      = item
+                    <br>
+            .recipe_info
+              = truncate(recipe.recipe)

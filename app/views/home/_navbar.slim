@@ -1,133 +1,38 @@
-/ nav.menu
-/   = link_to 'Cookio', root_path
-  /= render 'sessions/user_login'
-  /.sidebar
-  /  #hamburger
-  /    .slice
-  /    .slice
-  /    .slice
-  /  section
-  /    ul#menu-list
-  /      li
-  /        == link_to 'Mobile', home_mobile_path
-  /      -if no_one_logged_in?
-  /        li
-  /          == link_to 'New User', new_user_path
-  /        li
-  /          == link_to 'New Chef', new_chef_path
-  /        li
-  /          == link_to 'Chef Login', login_chef_path
-  /        li
-  /          == link_to 'User Login', login_user_path
-  /      -if current_user
-  /        li
-  /          == link_to 'New Reservation', reservations_new_path
-  /      -if current_chef
-  /        li
-  /          == link_to 'Reservations', reservations_path
-  /      -if someone_logged_in?
-  /        li
-  /          == link_to 'My Account', (@chef || @user)
-  /        li
-  /          == link_to 'Sign Out', logout_path
-  /        li
-  /          == link_to 'Mobile', home_mobile_path
-/ ul#menu-list
-/   /li
-/     /== link_to 'Mobile', home_mobile_path
-/   -if is_admin?
-/     li
-/       => link_to 'admin', recipes_path
-/     li
-/       = link_to 'new recipe', new_recipe_path
-/     li
-/       = link_to 'Chefs', chefs_path
-/   -if no_one_logged_in?
-/     li
-/       == link_to 'New User', new_user_path
-/     li
-/       == link_to 'New Chef', new_chef_path
-/     li
-/       == link_to 'Chef Login', login_chef_path
-/     li
-/       == link_to 'User Login', login_user_path
-/   -if !is_admin? && current_user
-/     li
-/       == link_to 'New Reservation', reservations_new_path
-/   -if current_chef
-/     li
-/       == link_to 'Reservations', reservations_path
-/   -if someone_logged_in?
-/     -if not is_admin?
-/       li
-/         == link_to 'My Account', (@chef || @user), class:"My_Account"
-/     li
-/       == link_to 'Sign Out', logout_path
-/ span
-/   = notice
 nav
-  .nav-wrapper
-    a.brand-logo = link_to 'Cookio', root_path
-    a.button-collapse data-activates="mobile-demo" link_to 'Cookio', root_path
-      i.material-icons menu
-    ul.right.hide-on-med-and-down
-      -if is_admin?
-        li
-          => link_to 'admin', recipes_path
-        li
-          = link_to 'new recipe', new_recipe_path
-        li
-          = link_to 'Chefs', chefs_path
-      -if no_one_logged_in?
-        li
-          == link_to 'New User', new_user_path
-        li
-          == link_to 'New Chef', new_chef_path
-        li
-          == link_to 'Chef Login', login_chef_path
-        li
-          == link_to 'User Login', login_user_path
-      -if !is_admin? && current_user
-        li
-          == link_to 'New Reservation', reservations_new_path
-      -if current_chef
-        li
-          == link_to 'Reservations', reservations_path
-      -if someone_logged_in?
-        -if not is_admin?
-          li
-            == link_to 'My Account', (@chef || @user), class:"My_Account"
-        li
-          == link_to 'Sign Out', logout_path
-    ul#mobile-demo.side-nav
-      -if is_admin?
-        li
-          => link_to 'admin', recipes_path
-        li
-          = link_to 'new recipe', new_recipe_path
-        li
-          = link_to 'Chefs', chefs_path
-      -if no_one_logged_in?
-        li
-          == link_to 'New User', new_user_path
-        li
-          == link_to 'New Chef', new_chef_path
-        li
-          == link_to 'Chef Login', login_chef_path
-        li
-          == link_to 'User Login', login_user_path
-      -if !is_admin? && current_user
-        li
-          == link_to 'New Reservation', reservations_new_path
-      -if current_chef
-        li
-          == link_to 'Reservations', reservations_path
-      -if someone_logged_in?
-        -if not is_admin?
-          li
-            == link_to 'My Account', (@chef || @user), class:"My_Account"
-        li
-          == link_to 'Sign Out', logout_path
- 
-  span
-    = notice
+  .nav-wrapper
+    .logo_wrapper
+      = link_to root_path, class:'logo_link brand-logo center'
+        = image_tag 'name_logo.png', alt: 'Link to Home with logo', class: 'nav_logo'
+    ul#nav-mobile.right.hide-on-med-and-down
+      li
+        == link_to 'Mobile', home_mobile_path
+      -if is_admin?
+        li
+          => link_to 'admin', recipes_path
+        li
+          = link_to 'new recipe', new_recipe_path
+        li
+          = link_to 'Chefs', chefs_path
+      -if no_one_logged_in?
+        li
+          = link_to 'New User', new_user_path
+        li
+          = link_to 'New Chef', new_chef_path
+        li
+          = link_to 'Chef Login', login_chef_path
+        li
+          = link_to 'User Login', login_user_path
+      -if !is_admin? && current_user
+        li
+          = link_to 'New Reservation', reservations_new_path
+      -if current_chef
+        li
+          = link_to 'Reservations', reservations_path
+      -if someone_logged_in?
+        -if not is_admin?
+          li
+            = link_to 'My Account', (@chef || @user), class:"My_Account"
+        li
+          = link_to 'Sign Out', logout_path
+span.notice
+  = notice

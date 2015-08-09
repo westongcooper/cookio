@@ -1,11 +1,13 @@
 - if @reservation.chef_id
   - @messages.each do |message|
 
-    == message.chef_id ? @chef.first_name : @user.first_name
-    br/
-    == message.subject
-    br/
-    == message.message
+    h5.message-owner
+      == message.chef_id ? @chef.first_name : @user.first_name
+    /
+    /h5
+    /  == message.subject
+    h6.message-text
+      == message.message
     br/
     br/
 
