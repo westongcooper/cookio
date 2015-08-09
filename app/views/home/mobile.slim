@@ -1,15 +1,23 @@
-.card.medium
-  .card-image.waves-effect.waves-block.waves-light
-    .activator
-      = image_tag('http://www.epicurious.com/images/recipesmenus/2004/2004_october/231348.jpg')
-  .card-content
-    span.card-title.activator.grey-text.text-darken-4
-      | Roast Chicken
-      i.material-icons.right more_vert
-    p
-      a href="#"  Edit This reservation
-  .card-reveal
-    span.card-title.grey-text.text-darken-4
-      | Roast Chicken
-      i.material-icons.right close
-    h5 Customer: <span > Sean, and Weston</span>
+
+.index-top
+  p
+    |Have a Home Cooked Meal Anytime
+  = link_to 'Click here to make a reservation now!', new_reservation_path
+.container
+  .index-photo
+    = image_tag('https://s3.amazonaws.com/cookie-pics/how_do_you_cookio.png')
+
+  .become-a-chef
+    p Become a Chef! #{link_to 'Click Here', new_chef_path}
+  .make-a-reservation
+    = link_to 'Make a Reservation', new_reservation_path
+
+//! Modal Trigger
+a.waves-effect.waves-light.btn.modal-trigger href="#modal1"  Modal
+/! Modal Structure
+#modal1.modal
+  .modal-content
+    h4 Modal Header
+    p A bunch of text
+  .modal-footer
+    a.modal-action.modal-close.waves-effect.waves-green.btn-flat href="#!"  Agree

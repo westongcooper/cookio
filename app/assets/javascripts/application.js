@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require materialize
 //= require reservation
+//= require Materialize/cards
 // require_tree .
 
 function ready() {
@@ -32,6 +33,9 @@ function ready() {
     $('#payment').text(priceToDisplay);
     $('button span').text(priceToDisplay + " - Pay with card");
   });
+
+
+
 }
 $(document).on('ready page:load', ready);
 $(function() {
@@ -39,3 +43,4 @@ $(function() {
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 15 // Creates a dropdown of 15 years to control year
   })});
+

@@ -19,7 +19,9 @@
 *= require_self
 */
 
-
+body{
+    width: 100%;
+}
 
 label.error {
     color:#ef5350;
@@ -51,4 +53,31 @@ textarea#input-field{
 }
 .recipe_submit_button{
     margin-top:15px;
+}
+
+
+.index-top {
+    background-image: url("https://s3.amazonaws.com/cookie-pics/ladycooking+copy.jpg");
+    height: 800px;
+    width:100%;
+    text-align: center;
+}
+.index-top p{
+    padding-top: 10% ;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 4rem;
+}
+.index-top a{
+    font-size: 3rem;
+    background-color: #004d40;
+    border-radius: 10px;
+}
+.box{
+    width:30%;
+    height: 15%;
+}
+
+.testing{
+    display: inline-block;
 }
