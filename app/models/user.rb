@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   has_many :messages
 
   validates :first_name, :last_name, :email, :password_digest, presence: true
-  validates :password, confirmation: true, length: {minimum: 6}
-  validates :password_confirmation, presence: true
+  # validates :password, confirmation: true, length: {minimum: 6}
+  # validates :password_confirmation, presence: true
 
   validates :email,
             format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i},

@@ -11,7 +11,7 @@
  * file per style scope.
 * require materialize
 *= require materialize_init
-*= require cookio.scss
+*= require cookio
 *= require animate
 *= require_self
 */

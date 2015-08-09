@@ -3,8 +3,22 @@
   src:font-url('Knockout-HTF69FullLiteweight.ttf') format("truetype");
 
 }
+
+@font-face {
+  font-family: "Gotham-condensed";
+  src:font-url('GothamHTF-MediumCondensed.ttf') format("truetype");
+}
+@font-face {
+  font-family: "Gotham";
+  src:font-url('GothamHTF-Medium.ttf') format("truetype");
+}
+@font-face {
+  font-family: "Gotham-bold";
+  src:font-url('GothamHTF-Bold2.ttf') format("truetype");
+}
+
 h1,h2,h3,h4,h5,h6{
-  font-family:Knockout,sans-serif;
+  font-family:Gotham,sans-serif;
   color:#666;
   letter-spacing: 0.07em;
 }

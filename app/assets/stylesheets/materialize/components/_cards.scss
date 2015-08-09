@@ -60,6 +60,7 @@
 
   &.medium {
     height: 400px;
+	width: 400px;
 
     .card-image {
       height: 250px;
@@ -142,11 +143,54 @@
     height: 100%;
     z-index: 1;
     display: none;
-
+	h5{
+	  letter-spacing: 0;
+	  font-family: Gotham-bold,sans-serif;
+	}
     .card-title {
       cursor: pointer;
       display: block;
     }
 
+  }
+}
+h5 span{
+  font-size: 1.6rem;
+  font-family: Gotham,sans-serif;
+}
+h6{
+  font-size: 1.4rem;
+}
+.message-title{
+  font-size: 1.6rem;
+  font-family: Gotham-bold,sans-serif;
+}
+.message-owner{
+  font-size: 1.8rem;
+  font-family: Gotham-bold,sans-serif;
+
+}
+.message-text{
+  font-size: 1.8rem;
+  font-family: Gotham,sans-serif;
+
+}
+.new-message{}
+
+.card-content .chef-card{
+  text-align: center;
+}
+.card-chef {
+  padding: $card-padding;
+  border-radius: 0 0 2px 2px;
+  text-align: center;
+
+  p {
+	margin: 0;
+	color: inherit;
+
+  }
+  .card-title {
+	line-height: 48px;
   }
 }

@@ -1,12 +1,38 @@
 h1 My Reservations
-- @user_reservations.each do |reservation|
-  = div_for(reservation, class: 'reservation') do
-    h3 User:  #{reservation.user.first_name}
-    h3 Date: #{reservation.date}
-    h3 Time: #{reservation.time}
-    h3 Details: #{reservation.details}
-    h3 Recipe: #{reservation.recipe.title}
+/- @user_reservations.each do |reservation|
+/  = div_for(reservation, class: 'reservation') do
+/    h3 User:  #{reservation.user.first_name}
+/    h3 Date: #{reservation.date}
+/    h3 Time: #{reservation.time}
+/    h3 Details: #{reservation.details}
+/    h3 Recipe: #{reservation.recipe.title}
+/
+/    = link_to 'Show', reservation
+/    = link_to "Remove Reservation", reservation, method: :delete, data: {confirm: "Are you sure you would like to delete this Reservation?"}
 
-    => link_to 'Show', reservation
-    = link_to "Remove Reservation", reservation, method: :delete, data: {confirm: "Are you sure you would like to delete this Reservation?"}
-  hr
+
+- @user_reservations.each do |reservation|
+  = div_for(reservation, class: 'card medium') do
+    .card-image.waves-effect.waves-block.waves-light
+      .activator
+        = image_tag(reservation.recipe.image)
+    .card-content
+      span.card-title.activator.grey-text.text-darken-4
+        = reservation.recipe.title
+        i.material-icons.right more_vert
+      p
+        = link_to 'More Information', reservation
+    .card-reveal
+      span.card-title.grey-text.text-darken-4
+        = reservation.recipe.title
+        i.material-icons.right close
+      h5 Customer: <span>#{reservation.user.name}</span>
+      h5 Chef: <span>#{reservation.chef.first_name}</span>
+      h5 Date: <span>#{reservation.date.to_s + " " + reservation.time.to_s}</span>
+      h5 Address: <span>#{reservation.address + " " + reservation.address2}</span>
+      h5 Details:
+      h6
+        = reservation.details
+      = link_to 'More Information', reservation
+      <br>
+      = link_to "Remove Reservation", reservation, method: :delete, data: {confirm: "Are you sure you would like to delete this Reservation?"}

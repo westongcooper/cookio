@@ -4,8 +4,8 @@ h2 Hi #{@user.first_name} User
 
 /=> link_to 'New Reservation', new_reservation_path
 /= link_to 'Edit Profile', edit_user_path(@user)
-= render 'reservations/current_reservations_user'
-= render 'reservations/old_reservations_user'
+/= render 'reservations/current_reservations_user'
+/
 /#tabs
 /  ul
 /    li
@@ -17,3 +17,20 @@ h2 Hi #{@user.first_name} User
 /
 /  #fragment-2
 /    = render 'home/profile'
+
+.row
+  .col.s12
+    ul.tabs
+      li.tab.col.s3
+        a.active href="#test1"  Current Reservations
+      li.tab.col.s3
+        a href="#test2"  Profile
+      li.tab.col.s3
+        a href="#test3"  Past Reservations
+
+  #test1.col.s12
+    = render 'reservations/current_reservations_user'
+  #test2.col.s12
+    = render 'home/profile'
+  #test3.col.s12
+    = render 'reservations/old_reservations_user'

@@ -1,5 +1,15 @@
-#card
-  .front
-    | Front content
-  .back
-    | Back content
+.card.medium
+  .card-image.waves-effect.waves-block.waves-light
+    .activator
+      = image_tag('http://www.epicurious.com/images/recipesmenus/2004/2004_october/231348.jpg')
+  .card-content
+    span.card-title.activator.grey-text.text-darken-4
+      | Roast Chicken
+      i.material-icons.right more_vert
+    p
+      a href="#"  Edit This reservation
+  .card-reveal
+    span.card-title.grey-text.text-darken-4
+      | Roast Chicken
+      i.material-icons.right close
+    h5 Customer: <span > Sean, and Weston</span>
