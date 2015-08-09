@@ -14,17 +14,19 @@
 *= require jquery-ui
 *= require cookio
 *= require animate
-*= require home
 *= require file_upload
 *= require select_box
-*= require nav_bar
 *= require_self
 */
 
 body{
-    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
-
+main {
+    flex: 1 0 auto;
+}
 label.error {
     color:#ef5350;
 }
@@ -46,7 +48,6 @@ input[type="text"]
 {
     font-size:1.5rem;
 }
-
 
 label.recipe_text{
     position:static;
@@ -98,4 +99,7 @@ textarea#input-field{
 }
 .card{
     overflow: auto;
+}
+ul.testing{
+    display: inline-block;
 }
