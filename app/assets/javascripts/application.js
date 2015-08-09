@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require materialize
 //= require reservation
+//= require animation
 //= require Materialize/cards
 // require_tree .
 
@@ -33,13 +34,11 @@ function ready() {
     $('#payment').text(priceToDisplay);
     $('button span').text(priceToDisplay + " - Pay with card");
   });
+
+
+
 }
-var 
-$(document).on('ready page:load', function(){
-  if($('span.notice').text()!=""){
-    alert($('span.notice').text())
-  }
-});
+
 
 $(document).on('ready page:load', ready);
 $(function() {
