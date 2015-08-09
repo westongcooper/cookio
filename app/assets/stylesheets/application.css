@@ -17,6 +17,7 @@
 *= require file_upload
 *= require nav_bar
 *= require select_box
+*= require home
 *= require_self
 */
 
