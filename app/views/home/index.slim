@@ -1,8 +1,58 @@
+/ 
+/ .index-photo
+/   = image_tag('http://i.huffpost.com/gen/1475945/images/o-COOKING-AT-HOME-facebook.jpg')
+/ / .index-photo
+/ /   = image_tag('https://s3.amazonaws.com/cookie-pics/how_do_you_cookio.png')
+/ / 
+/ div.text
+/   h1.become  HOW DO YOU COOKIO?
+/   h3.click click make reservation.
+/   h3.details fill in details
+/ 
+/ .become-a-chef
+/   p Become a Chef! #{link_to 'Click Here', new_chef_path}
+/ .make-a-reservation
+/   - if current_user
+/     = link_to 'Make a Reservation', new_reservation_path
+/   - elsif current_chef
+/     = link_to 'All Reservations', reservations_path
+/ - @recipes.each do |r|
+/   - if current_user
+/     = link_to image_tag( r.image, height: '300', width: '300' ), new_reservation_path(r.id)
+/   - else
+/     = link_to image_tag(r.image, height: '300', width: '300'), login_user_path
 
-.index-photo
-  = image_tag('http://i.huffpost.com/gen/1475945/images/o-COOKING-AT-HOME-facebook.jpg')
-.index-photo
-  = image_tag('https://s3.amazonaws.com/cookie-pics/how_do_you_cookio.png')
+///////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+  | Services
+  | \=============================
+
+
+
+#services
+  .inner
+    #bitme
+      = image_tag('textalone.png')
+  
+      
+    
+
+#howto
+  .inner 
+    h1.cook HOW TO COOKIO  
+    #hello
+        div.pointer
+          = image_tag('pointer.png')
+        div.form
+          = image_tag('form.png')
+        div.head
+          = image_tag('head.png')
+        div.hat
+          = image_tag('stamp-alone.png')
+
 
 .become-a-chef
   p Become a Chef! #{link_to 'Click Here', new_chef_path}

@@ -13,6 +13,7 @@
 *= require materialize_init
 *= require cookio.scss
 *= require animate
+*= require home
 *= require_self
 */
 

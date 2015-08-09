@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require materialize
 //= require reservation
+//= require home
 // require_tree .
 
 function ready() {
