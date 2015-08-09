@@ -34,7 +34,7 @@
                     p
                       = chef.zip
                   .card-action
-                    = link_to "toggle active", toggle_active_chef_path(chef.id)
+                    = link_to "toggle active", toggle_active_chef_path(chef.id), method: :post
 
   #test2.col.s12
     .chefs-active
@@ -60,4 +60,4 @@
                 p
                   = chef.zip
               .card-action
-                = link_to "toggle active", toggle_active_chef_path(chef.id)
+                = link_to "toggle active", toggle_active_chef_path(chef.id), method: :post
