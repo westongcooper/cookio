@@ -12,11 +12,11 @@
   .recipe_ingredients
     = content_tag :div do
       -JSON.parse(recipe.ingredients).each_with_index do |item,index|
-        p
-          span
-            = (index + 1).to_s + ' - '
-          span
-            =item
+        = ' - '
+        span
+          =item
+        <br>
   .recipe_info
     = recipe.recipe
   hr
+

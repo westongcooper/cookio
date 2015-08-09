@@ -1,20 +1,20 @@
 h2 Chef
 = link_to 'edit profile', edit_chef_path
 h1 My confirmations
-=> link_to 'Make confirmation', reservations_path
+=> link_to 'Confirm a Reservation', reservations_path
 = render 'reservations/current_reservations_chef'
 
 
+.row
+  .col.s12
+    ul.tabs
+      li.tab.col.s3
+        a.active href="#test1"  Current Reservations
+      li.tab.col.s3
+        a href="#test2"  Profile
 
 
-/#tabs
-/  ul
-/    li
-/      a href="#fragment-1"  Reservations
-/    li
-/      a href="#fragment-2"  Profile
-/
-/  #fragment-1
-/    = render 'reservations/current_reservations_chef'
-/  #fragment-2
-/    = render 'home/profile'
+  #fragment-1
+    = render 'reservations/current_reservations_chef'
+  #fragment-2
+    = render 'home/profile'

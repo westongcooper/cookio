@@ -1,8 +1,8 @@
 nav.menu
   = link_to 'Cookio', root_path
 ul#menu-list
-  /li
-    /== link_to 'Mobile', home_mobile_path
+  li
+    == link_to 'Mobile', home_mobile_path
   -if is_admin?
     li
       => link_to 'admin', recipes_path

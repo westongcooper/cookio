@@ -89,7 +89,7 @@ reservations = 1
                   allergies: get_allergies,
                   diet_restrictions: get_diet,
                   phone: phone,
-                  password_digest:BCrypt::Password.create(n+100000))
+                  password_digest:BCrypt::Password.create(n))
   zipCity = zip_city
   c = Chef.create(first_name:Faker::Name.first_name,
                   last_name:Faker::Name.last_name,
@@ -101,7 +101,7 @@ reservations = 1
                   zip: zipCity[0].to_s,
                   phone: get_phone(n+1000),
                   active: true,
-                  password_digest:BCrypt::Password.create(n+100000))
+                  password_digest:BCrypt::Password.create(n))
   if n % reservation_factor == 0
     reservations += 1
     r = Reservation.create(user_id:u.id,
