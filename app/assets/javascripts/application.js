@@ -35,9 +35,11 @@ function ready() {
   });
 }
 
-if($('span.notice').text()!=""){
-  alert($('span.notice').text())
-}
+$(document).on('ready page:load', function(){
+  if($('span.notice').text()!=""){
+    alert($('span.notice').text())
+  }
+});
 $(document).on('ready page:load', ready);
 $(function() {
   $('.datepicker').datepicker({
