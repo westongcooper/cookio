@@ -15,6 +15,7 @@
 *= require cookio
 *= require animate
 *= require file_upload
+*= require nav_bar
 *= require select_box
 *= require_self
 */
