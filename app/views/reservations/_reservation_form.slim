@@ -25,38 +25,38 @@
         |star
       i.material-icons.prefix
         |location_on
-      = f.text_field :address, class: 'validate', value: @user.address
-      = res_label_field_active(@reservation, f, 'address',@user.address2)
+      = f.text_field :address, class: 'validate'
+      = label_field_active(@reservation, f, 'address')
     .input-field.col.m6.s12
       i.material-icons.prefix.tiny.right-align
-      = f.text_field :address2, class: 'validate', value: @user.address2
-      = res_label_field_active(@reservation, f, 'address2', @user.address2)
+      = f.text_field :address2, class: 'validate'
+      = label_field_active(@reservation, f, 'address2')
   .row
     .input-field.col.m6.s12
       i.material-icons.prefix.tiny.right-align
         |star
       i.material-icons.prefix
         |location_city
-      = f.text_field :city, class: 'validate', value: @user.city
-      = res_label_field_active(@reservation, f, 'city',@user.city)
+      = f.text_field :city, class: 'validate'
+      = label_field_active(@reservation, f, 'city')
     .input-field.col.m3.s6
       i.material-icons.prefix.tiny.right-align
         |star
-      = f.text_field :state, class: 'validate', value: @user.state
-      = res_label_field_active(@reservation, f, 'state', @user.state)
+      = f.text_field :state, class: 'validate'
+      = label_field_active(@reservation, f, 'state')
     .input-field.col.m3.s6
       i.material-icons.prefix.tiny.right-align
         |star
-      = f.text_field :zip, class: 'validate', value: @user.zip
-      = res_label_field_active(@reservation, f, 'zip', @user.zip)
+      = f.text_field :zip, class: 'validate'
+      = label_field_active(@reservation, f, 'zip')
   .row
     .input-field.col.m6.s12
       i.material-icons.prefix.tiny.right-align
         |star
       i.material-icons.prefix
         |phonelink_ring
-      = f.text_field :phone, class: 'validate', value: @user.phone
-      = res_label_field_active(@reservation, f, 'phone', @user.phone)
+      = f.text_field :phone, class: 'validate'
+      = label_field_active(@reservation, f, 'phone')
   .row.valign-wrapper
     .col.s4.m4.valign.offset-s2.right-align.offset-m8
       h4#payment $20.00

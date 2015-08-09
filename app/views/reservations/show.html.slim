@@ -14,7 +14,7 @@
       = @reservation.recipe.title
       i.material-icons.right close
     h5 Customer: <span>#{@reservation.user.name}</span>
-    h5 Chef: <span>#{@reservation.chef.first_name}</span>
+    h5 Chef: <span>#{@reservation.chef.first_name if @reservation.chef}</span>
     h5 Date: <span>#{@reservation.date.to_s + " " + @reservation.time.to_s}</span>
     h5 Address: <span>#{@reservation.address + " " + @reservation.address2}</span>
     h5 Details:

@@ -14,14 +14,6 @@ module HomeHelper
       f.label field, class: "active"
     end
   end
-  def res_label_field_active(form,f,field,user)
-    # byebug
-    if form.read_attribute(field).blank? || user.blank?
-      f.label field
-    else
-      f.label field, class: "active"
-    end
-  end
   # def current_user
   #   @current_user ||= User.find_by(id: session[:user_id])
   # end

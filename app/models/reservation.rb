@@ -45,6 +45,9 @@ class Reservation < ActiveRecord::Base
       where('date < ?', Date.today).
       order('date DESC').
       includes(:recipe, :user)}
+  def self.new_preset(user,params)
+    new(recipe_id:params,address:user.address,address2:user.address2,city:user.city,state:user.state,zip:user.zip,phone:user.phone)
+  end
 
   # def self.is_nil_or_user_or_chef(current_chef, current_user,params)
   #   find(params).chef_id == nil || Reservation.find(params).user_id == current_user.id || Reservation.find(params).chef_id == current_chef.id

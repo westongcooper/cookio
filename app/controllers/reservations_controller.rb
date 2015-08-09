@@ -15,7 +15,7 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    @reservation = Reservation.new(recipe_id:params[:recipe])
+    @reservation = Reservation.new_preset(@user,params[:recipe])
     @recipes = Recipe.all
   end
 
