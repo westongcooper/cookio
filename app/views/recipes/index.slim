@@ -1,6 +1,6 @@
 .container
  = div_for(@recipes, class: 'box testing') do |recipe|
-    .col.s12.m3
+     .col.s12.m3
       .card.green.darken-1
         .card-chef.black-text
           span.card-title.black-text #{recipe.title}
@@ -14,10 +14,12 @@
               = image_tag(recipe.image, height: '300', width: '300')
             .recipe_ingredients
               = content_tag :div do
+
                 -JSON.parse(recipe.ingredients).each_with_index do |item, index|
-                  = ' - '
-                  span
-                    =item
-                  <br>
+                  = if index >= 7
+                    = ' - '
+                    span
+                      = item
+                    <br>
             .recipe_info
-              = recipe.recipe
+              = truncate(recipe.recipe)

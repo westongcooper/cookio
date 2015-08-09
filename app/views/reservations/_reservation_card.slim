@@ -4,7 +4,7 @@
       = image_tag(reservation.recipe.image)
   .card-content
     span.card-title.activator.grey-text.text-darken-4
-      = reservation.recipe.title
+      = truncate(reservation.recipe.title, length: 60)
       i.material-icons.right more_vert
     p
       = link_to 'More Information', reservation

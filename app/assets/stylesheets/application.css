@@ -14,6 +14,7 @@
 *= require jquery-ui
 *= require cookio
 *= require animate
+*= require home
 *= require file_upload
 *= require select_box
 *= require nav_bar
@@ -46,6 +47,7 @@ input[type="text"]
     font-size:1.5rem;
 }
 
+
 label.recipe_text{
     position:static;
 }
@@ -75,10 +77,25 @@ textarea#input-field{
     border-radius: 10px;
 }
 .box{
-    width:30%;
-    height: 15%;
+    width:500px;
+    height: 400px;
+    margin-left: 1%;
+    padding: 0 0;
 }
 
 .testing{
     display: inline-block;
+}
+.card-chefs{
+    height: 325px;
+    text-align: center;
+}
+.card-chefs ul{
+    text-align: center;
+}
+.centerize{
+    text-align: center;
+}
+.card{
+    overflow: auto;
 }

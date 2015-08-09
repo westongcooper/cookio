@@ -11,20 +11,21 @@
       = @reservation.details
     br /
     .reserve
-      - if current_chef && @reservation.chef_id != current_chef.id
+      - if (current_chef && @reservation.chef_id) != current_chef.id
         = link_to "reserve", @reservation, method: :patch
-    h3.message-title Messages:
-    = render 'reservations/message'
+      -if  (current_chef && @reservation.chef_id) == current_chef.id
+        h3.message-title Messages:
+        = render 'reservations/message'
 
-    - if @reservation.chef_id
-      .row
-        .col.m10.offset-m1.s12
-          h5.center-align
-            | New Message
+        - if @reservation.chef_id
           .row
-            = form_for [@reservation, @new_reservations_message] do |f|
+            .col.m10.offset-m1.s12
+              h5.center-align
+                | New Message
               .row
-                .input-field.col.m8.offset-m2.s12
-                  = f.text_field :message, class:'validate'
-                  = f.label :message
-                  = f.submit
+                = form_for [@reservation, @new_reservations_message] do |f|
+                  .row
+                    .input-field.col.m8.offset-m2.s12
+                      = f.text_field :message, class:'validate'
+                      = f.label :message
+                      = f.submit
