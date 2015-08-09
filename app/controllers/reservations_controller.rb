@@ -15,9 +15,8 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    @reservation = Reservation.new
+    @reservation = Reservation.new(recipe_id:params[:recipe])
     @recipes = Recipe.all
-    @selected = params[:format]
   end
 
   def show
@@ -35,7 +34,6 @@ class ReservationsController < ApplicationController
   def create
     @reservation = current_user.reservations.new reservation_params.except(:stripeToken, :amount)
     if @reservation.save
-      # byebug
       customer = Stripe::Customer.create(
         :email => reservation_params[:stripeEmail],
         :card  => reservation_params[:stripeToken]
@@ -70,7 +68,7 @@ class ReservationsController < ApplicationController
   def reservation_params
     params.
         require(:reservation).
-        permit(:details, :date, :stripeEmail, :stripeToken, :amount, :time, :address, :address2, :city, :state, :zip, :phone, :recipe_id, :plates)
+        permit(:details, :date, :stripeEmail, :stripeToken, :plates, :amount, :time, :address, :address2, :city, :state, :zip, :phone, :recipe_id, :plates)
   end
   def set_user
     @user = current_user

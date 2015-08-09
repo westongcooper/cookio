@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require materialize
 //= require reservation
@@ -20,8 +21,8 @@
 function ready() {
   $('button span').text("$20.00 - Pay with card");
   $("#hamburger").click(function () {
-      $("#menu-list").toggleClass("opacity");
-      $(".slice").toggleClass("transform");
+    $("#menu-list").toggleClass("opacity");
+    $(".slice").toggleClass("transform");
   });
 
   $("#reservation_plates").on("change", function(e){
@@ -33,3 +34,8 @@ function ready() {
   });
 }
 $(document).on('ready page:load', ready);
+$(function() {
+  $('.datepicker').datepicker({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  })});

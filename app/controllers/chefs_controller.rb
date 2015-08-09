@@ -8,7 +8,7 @@ class ChefsController < ApplicationController
     @chefs_active = Chef.where(active:true)
   end
   def new
-    @chef = Chef.new
+    @profile = Chef.new
   end
 
   def create

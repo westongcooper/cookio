@@ -1,0 +1,65 @@
+= form_for @reservation do |f|
+  .row
+    .input-field.col.m12.s12
+      .select-wrapper
+        = f.collection_select :recipe, @recipes, :id, :title, {selected:params[:recipe],include_blank:'Select recipe'},{class:'select-dropdown minimal'}
+        = f.label :recipe, class:'active recipe_select'
+  .row
+    .input-field.col.m4.s4
+      = f.text_field :date, value: date_mdY(@reservation.date), class:'datepicker', placeholder: "Date?"
+      = f.label :date, class: "active"
+    .input-field.col.m4.s4
+      .select-wrapper
+        = f.select(:time, Reservation::LIST_TIME, {include_blank:'Time?'},{ class: 'select-dropdown minimal' })
+    .input-field.col.m4.s4
+      .select-wrapper
+        = f.select(:plates, Reservation::PLATE_NUMS, { include_blank: 'Plates?' }, { class: 'select-dropdown minimal' })
+  .row
+    .input-field.col.s12
+      i.material-icons.prefix.valign
+        |warning
+      = f.text_field :details, placeholder:'Any Allergies?'
+  .row
+    .input-field.col.m6.s12
+      i.material-icons.prefix.tiny.right-align
+        |star
+      i.material-icons.prefix
+        |location_on
+      = f.text_field :address, class: 'validate', value: @user.address
+      = res_label_field_active(@reservation, f, 'address',@user.address2)
+    .input-field.col.m6.s12
+      i.material-icons.prefix.tiny.right-align
+      = f.text_field :address2, class: 'validate', value: @user.address2
+      = res_label_field_active(@reservation, f, 'address2', @user.address2)
+  .row
+    .input-field.col.m6.s12
+      i.material-icons.prefix.tiny.right-align
+        |star
+      i.material-icons.prefix
+        |location_city
+      = f.text_field :city, class: 'validate', value: @user.city
+      = res_label_field_active(@reservation, f, 'city',@user.city)
+    .input-field.col.m3.s6
+      i.material-icons.prefix.tiny.right-align
+        |star
+      = f.text_field :state, class: 'validate', value: @user.state
+      = res_label_field_active(@reservation, f, 'state', @user.state)
+    .input-field.col.m3.s6
+      i.material-icons.prefix.tiny.right-align
+        |star
+      = f.text_field :zip, class: 'validate', value: @user.zip
+      = res_label_field_active(@reservation, f, 'zip', @user.zip)
+  .row
+    .input-field.col.m6.s12
+      i.material-icons.prefix.tiny.right-align
+        |star
+      i.material-icons.prefix
+        |phonelink_ring
+      = f.text_field :phone, class: 'validate', value: @user.phone
+      = res_label_field_active(@reservation, f, 'phone', @user.phone)
+  .row.valign-wrapper
+    .col.s4.m4.valign.offset-s2.right-align.offset-m8
+      h4#payment $20.00
+    .col.s8.m6.valign
+      button#continue.confirm.waves-effect.waves-light.btn.profile-continue-btn style=("display: block;")
+        |Reserve

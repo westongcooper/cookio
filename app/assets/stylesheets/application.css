@@ -11,8 +11,11 @@
  * file per style scope.
 * require materialize
 *= require materialize_init
+*= require jquery-ui
 *= require cookio.scss
 *= require animate
+*= require file_upload
+*= require select_box
 *= require_self
 */
 
@@ -29,11 +32,23 @@ i.tiny{
     left:10px;
     color:#ef5350;
 }
-
+i.med{
+    font-size: 3rem !important;
+}
 select{
     display:inline;
 }
 input[type="text"]
 {
     font-size:1.5rem;
+}
+
+label.recipe_text{
+    position:static;
+}
+textarea#input-field{
+    height:100px;
+}
+.recipe_submit_button{
+    margin-top:15px;
 }

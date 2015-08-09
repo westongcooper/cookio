@@ -1,13 +1,17 @@
 @font-face {
   font-family: "Knockout";
   src:font-url('Knockout-HTF69FullLiteweight.ttf') format("truetype");
-
 }
+
 h1,h2,h3,h4,h5,h6{
   font-family:Knockout,sans-serif;
   color:#666;
   letter-spacing: 0.07em;
 }
+
 .row{
   margin-bottom:5px;
+}
+label.recipe_select{
+  left:0;
 }
