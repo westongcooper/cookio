@@ -3,9 +3,8 @@ footer.page-footer
     .row
       .col.l6.s12
         .logo-wrapper-footer
-          h5.white-text
-            = link_to root_path, class: 'logo_link brand-logo center'
-              = image_tag 'name_logo.png', alt: 'Link to Home with logo', class: 'nav_logo'
+          = link_to root_path, class: 'logo_link brand-logo center'
+            = image_tag 'name_logo.png', alt: 'Link to Home with logo', class: 'nav_logo'
       .col.l4.offset-l2.s12
         ul
           li
@@ -17,8 +16,9 @@ footer.page-footer
   .footer-copyright
     .container
       | © 2015 Copyright Cookio
-      .grey-text.text-lighten-4.right
-          .logo-social-footer
+
+      .right
+        .please-work
             = image_tag 'twitter-logo-border.png', alt: 'Link to Home with logo', class: 'nav_logo'
       .grey-text.text-lighten-4.right
         .logo-social
