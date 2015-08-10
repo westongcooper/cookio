@@ -120,25 +120,25 @@
     // width: 300px;
 
 
-    padding-top: 60px;
+    padding-top: 1px;
     // background: #F3F3F3;
     overflow: hidden;
     border-bottom: 6px solid #ffffff;
     height: auto;
 
 }
-// #howto .inner {
-//     padding-bottom: 31px;
-// }
-// #howto ul {
-//     padding: 46px 0 0 0;
-// }
-// #howto ul li {
-//     float: left;
-//     padding: 0 20px 0 0;
-//     max-width: 290px;
-//     margin: 0 0 36px 0;
-// }
+#howto .inner {
+    padding-bottom: 31px;
+}
+#howto ul {
+    padding: 46px 0 0 0;
+}
+#howto ul li {
+    float: left;
+    padding: 0 20px 0 0;
+    max-width: 290px;
+    margin: 0 0 36px 0;
+}
 // #howto ul li span {
 //     float: left;
 //     width: 56px;
@@ -164,7 +164,7 @@
 //     -webkit-transition-duration: 0.5s;
 //     transition-duration: 0.5s;
 // }
-//
+
 
 
 @media only screen and (max-width: 767px) {
@@ -209,16 +209,16 @@
 
 #bitme {
 
-    height: 500px;
-    width: 350px;
-    margin-left: auto;
-    margin-right: auto;
+    // height: 500px;
+    // width: 5%;
+    margin-left: 35%;
+    // margin-right: auto;
     position:relative;
-    top: 280px;
-    margin-top: 5em;
-    -webkit-transition: top 1.5s;
-    -moz-transition: top 1.5s;
-    -o-transition: top 1.5s;
+    top: 10%;
+    margin-top: 38%;
+    // -webkit-transition: top 1.5s;
+    // -moz-transition: top 1.5s;
+    // -o-transition: top 1.5s;
 
 }
 
@@ -237,7 +237,7 @@
 #hello {
     position: relative;
     // top: -500px;
-    width: 60%;
+    width: 80%;
     // -webkit-animation: animation 2000ms linear both;
     // animation: animation 2000ms linear both;
 }
@@ -261,8 +261,9 @@
 }
 
 .pointer {
-  padding-top: 50px;
+  // padding-top: 50px;
   padding-bottom: 50px;
+
 }
 
 .form{
@@ -283,18 +284,22 @@
 
 #res {
   padding-bottom: 10px;
+  font-family: "Gotham-condensed"
 }
 
 #paper{
   padding-bottom: 10px;
+  font-family: "Gotham-condensed"
 }
 
 #brain {
   padding-bottom: 10px;
+  font-family: "Gotham-condensed"
 }
 
 #cap {
   padding-bottom: 10px;
+  font-family: "Gotham-condensed"
 }
 
 
@@ -311,23 +316,23 @@
 
  /* label underline focus color */
 .input-field input[type=text]:focus {
- border-bottom: 1px solid #1976D2;
- box-shadow: 0 1px 0 0 #1976D2;
+ border-bottom: 1px solid #0288d1;
+ box-shadow: 0 1px 0 0 #0288d1;
 }
 
 .input-field input[type=password]:focus {
- border-bottom: 1px solid #1976D2;
- box-shadow: 0 1px 0 0 #1976D2;
+ border-bottom: 1px solid #0288d1;
+ box-shadow: 0 1px 0 0 #0288d1;
 }
 
 
 /* label focus color */
 .input-field input[type=text]:focus + label {
-  color: #1976D2;
+  color: #0288d1;
 }
 
 .input-field input[type=password]:focus + label {
-  color: #1976D2;
+  color: #0288d1;
 }
 
 
