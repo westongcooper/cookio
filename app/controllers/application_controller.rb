@@ -18,18 +18,18 @@ class ApplicationController < ActionController::Base
     def require_logged_in
       return true if (current_chef || current_user)
       return true if is_admin?
-      redirect_to root_path
+      redirect_to login_user_path
       false
     end
     def require_chef
       return true if current_chef
       return true if is_admin?
-      redirect_to root_path
+      redirect_to login_chef_path
       false
     end
     def require_user
       return true if current_user
-      redirect_to root_path
+      redirect_to login_user_path
       false
     end
     def chef_active?
@@ -49,12 +49,17 @@ class ApplicationController < ActionController::Base
     def belongs_to_user_or_admin
       return true if current_user && current_user.id == Reservation.find(params[:id]).user_id
       return true if is_admin?
-      redirect_to root_path
+      redirect_to login_user_path
       false
     end
     def belongs_to_user
       return true if current_user.id == User.reservation.find(params[:id])
-      redirect_to root_path
+      redirect_to login_user_path
+      false
+    end
+    def belongs_to_chef
+      return true if current_chef.id == Chef.reservation.find(params[:id])
+      redirect_to login_user_path
       false
     end
 end
