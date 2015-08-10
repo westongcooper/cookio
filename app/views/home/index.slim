@@ -35,28 +35,28 @@
     #bitme
       = image_tag('textwhite.png')
 
-.container.centerize
-  #howto
-    .inner 
-      h1.cook HOW TO COOKIO  
-      #hello
-          ul#staggered-test.col.offset-8m
-            div.pointer
-              li.finger
-                h4#res Click create a reservation
-                = image_tag('pointer.png')
-            div.form   
-              li.form
-                h4#paper Fill in the details.
-                = image_tag('form.png')
-            div.head    
-              li.head
-                h4#brain Sit back and relax
-                = image_tag('head.png')
-            div.hat    
-              li.hat
-                h4#cap Our chef will come to you.
-                = image_tag('stamp-alone.png')
+
+#howto
+  .inner 
+    h1.cook HOW TO COOKIO  
+    #hello.container
+        .row#staggered-test.col.offset-8m
+          .col.l3.pointer
+            li.finger
+              h4#res Click create a reservation
+              = image_tag('pointer.png')
+          .col.l3.form
+            li.form
+              h4#paper.center-align Fill in the details.
+              = image_tag('form.png')
+          .col.l3.head  
+            li.head
+              h4#brain.center-align  Sit back and relax
+              = image_tag('head.png')
+          .col.l3.hat    
+            li.hat
+              h4#cap.center-align  Our chef will come to you.
+              = image_tag('stamp-alone.png')
 
 / #howto
 /   .inner
