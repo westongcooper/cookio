@@ -3,7 +3,7 @@
     .col.s12.m5.l3.recipe.offset-m1.offset-l1
       .image
         = link_to new_reservation_path(recipe:@recipes[@i].id)
-          =image_tag @recipes[@i].image,class:'responsive-img'
+          =image_tag @recipes[@i].image, class:'responsive-img'
         - if is_admin?
           .admin_recipe_buttons
             span.destroy
