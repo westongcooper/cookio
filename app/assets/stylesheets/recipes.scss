@@ -29,3 +29,11 @@ div.image img{
   font-size:1.3rem;
   border-bottom:dotted dimgrey 1px;
 }
+img.responsive-img{
+  width:100%;
+}
+@media screen and (min-width: 600px) {
+  .row .col.offset-m1 {
+    margin-left: 6%;
+  }
+}
