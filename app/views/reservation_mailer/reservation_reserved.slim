@@ -1,0 +1,19 @@
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+  body
+    h1 You Have just confirmed the reservation!
+    h3 Here are your details
+
+    .container
+      .card.medium
+        span.card-title.grey-text.text-darken-4
+          = @this.recipe.title
+        h5 Customer: <span>#{@this.user.name}</span>
+        h5 Chef: <span>#{@this.chef.first_name + " " + @this.chef.last_name}</span>
+        h5 Date: <span>#{@this.date.to_s + " " + @this.time.to_s}</span>
+        h5 Address: <span>#{@this.address + " " + @this.address2}</span>
+        h5 Details:
+        h6
+          = @this.details
+        br /

@@ -34,6 +34,8 @@ class ReservationsController < ApplicationController
   def create
     @reservation = current_user.reservations.new reservation_params.except(:stripeToken, :amount)
     if @reservation.save
+      ReservationMailer.new_reservation(@reservation).deliver_now
+
       customer = Stripe::Customer.create(
         :email => reservation_params[:stripeEmail],
         :card  => reservation_params[:stripeToken]
@@ -51,8 +53,11 @@ class ReservationsController < ApplicationController
     end
   end
   def update
+
     reservation = Reservation.find(params.require(:id))
+    @reservation = reservation
     if reservation.update(chef_id:current_chef.id)
+      ReservationMailer.reservation_reserved(@reservation).deliver_now
       redirect_to :back, flash:{notice:"Reservation Confirmed"}
     end
   end
@@ -61,6 +66,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     @reservation.canceled = true
     @reservation.save
+    ReservationMailer.reservation_canceled(@reservation).deliver_now
     redirect_to root_path, flash:{notice:"Reservation Removed"}
   end
 
