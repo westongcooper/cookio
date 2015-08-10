@@ -59,8 +59,4 @@
     = link_to 'Make a Reservation', new_reservation_path
   - elsif @logged_in_chef
     = link_to 'All Reservations', reservations_path
-- @recipes.each do |r|
-  - if @logged_in_user
-    = link_to image_tag( r.image, height: '300', width: '300' ), new_reservation_path(recipe:r.id)
-  - else
-    = link_to image_tag(r.image, height: '300', width: '300'), login_user_path
+=render 'recipes/show_recipes'

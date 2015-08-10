@@ -1,7 +1,9 @@
 class HomeController < ApplicationController
   before_action :set_user, :set_chef
   def index
-    @recipes = Recipe.all#.includes(:user)
+    @recipes = Recipe.all.order('updated_at DESC')
+    @num_rows = @recipes.count - 1
+    @i = 0
     if current_user
       @logged_in_user = true
     end
