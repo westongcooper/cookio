@@ -1,6 +1,10 @@
 
 
 animate = function(){
+  $('.button-collapse').sideNav();
+  //$('button-collapse').click(function() {
+  //  console.log('button click');
+  //});
   console.log('working?');
   var options = [
     {selector: '.make-a-reservation', offset: 1000, callback: "Materialize.showStaggeredList('#staggered-test')" }

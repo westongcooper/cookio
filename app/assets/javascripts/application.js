@@ -15,9 +15,10 @@
 //= require jquery-ui
 //= require turbolinks
 //= require materialize
+//= require Materialize/cards
 //= require reservation
 //= require animation
-//= require Materialize/cards
+//= require Materialize/sideNav
 // require_tree .
 
 function ready() {
