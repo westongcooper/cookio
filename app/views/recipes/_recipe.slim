@@ -1,0 +1,61 @@
+.row.single_recipe_partial
+  .col.l3.m12.s12.recipe_info
+    .row.recipe_1image
+      =image_tag @reservation.recipe.image, class:'responsive_single_img'
+    .row.recipe_1info
+      ul.collapsible.recipe data-collapsible="accordion"
+        li
+          .collapsible-header
+            i.material-icons menu
+            =truncate(@reservation.recipe.title,escape: false ,length: 29)
+          .collapsible-body
+            .row
+              .recipe_foldout_title
+                = @reservation.recipe.title
+            .row.valign-wrapper.recipe_dropdown
+              .col.s5
+                = content_tag :div do
+                  -JSON.parse(@reservation.recipe.ingredients).each_with_index do |item, index|
+                    = '- '
+                    span
+                      = item
+                    <br>
+            .row
+              .recipe_text
+                = @reservation.recipe.recipe
+
+  .col.l6.m12.s12.offset-l2.reservation_1messages
+    |testagain
+
+    /.image
+    /  = link_to new_reservation_path(recipe:@reservation.recipe.id)
+    /    =image_tag @reservation.recipe.image, class:'responsive_single_img'
+    /  - if is_admin?
+    /    .admin_recipe_buttons
+    /      span.destroy
+    /        = link_to "Destroy", @reservation.recipe, method: :delete, data: { confirm: "Are you sure you would like to destroy this recipe?" }
+    /      span.edit
+    /        = link_to "Edit", edit_recipe_path(@reservation.recipe)
+    /ul.collapsible.recipe data-collapsible="accordion"
+    /  li
+    /    .collapsible-header
+    /      i.material-icons menu
+    /      =truncate(@reservation.recipe.title,escape: false ,length: 29)
+    /    .collapsible-body
+    /      .row
+    /        .recipe_foldout_title
+    /          = @reservation.recipe.title
+    /      .row.valign-wrapper.recipe_dropdown
+    /        .col.s5
+    /          = content_tag :div do
+    /            -JSON.parse(@reservation.recipe.ingredients).each_with_index do |item, index|
+    /              = '- '
+    /              span
+    /                = item
+    /              <br>
+    /        .col.s5.valign.offset-s1.reserve_recipe_button
+    /          = link_to new_reservation_path(recipe:@reservation.recipe.id)
+    /            button.waves-effect.waves-light.btn Reserve
+    /      .row
+    /        .recipe_text
+    /          = @reservation.recipe.recipe

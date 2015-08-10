@@ -59,7 +59,7 @@ payAction = function(){
         url: '/reservations',
         data: postData,
         beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-        success: function() {
+        success: function(reservation) {
           $("#reservation_plates").val("");
           $("#reservation_date").val("");
           $('#reservation_time').val("");
@@ -70,7 +70,8 @@ payAction = function(){
           $("#reservation_zip").val("");
           $("#reservation_phone").val("");
           Materialize.toast('Reservation Complete!',1000,'toast_notice',function(){
-            window.location=$('.My_Account').attr('href')});
+            window.location= reservation.id
+          });
           },
         error: function(request, error) {
           console.log(arguments);
