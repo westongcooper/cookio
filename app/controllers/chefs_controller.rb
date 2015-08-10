@@ -4,8 +4,8 @@ class ChefsController < ApplicationController
   before_action :is_admin?, only: [:index,:toggle]
 
   def index
-    @chefs_inactive = Chef.where(active:false)
-    @chefs_active = Chef.where(active:true)
+    @chefs_inactive = Chef.where(active:false).limit(20)
+    @chefs_active = Chef.where(active:true).limit(10)
   end
   def new
     @profile = Chef.new

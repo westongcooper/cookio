@@ -27,30 +27,50 @@
 
 
 
-  | Services
-  | \=============================
 
 
 
 #services
   .inner
     #bitme
-      = image_tag('textalone.png')
+      = image_tag('textwhite.png')
 
-#howto
-  .inner
-    h1.cook HOW TO COOKIO
-    #hello
-        ul#staggered-test.col.offset-8m
-          li.pointer
-            = image_tag('pointer.png')
-          li.form
-            = image_tag('form.png')
-          li.hand
-            = image_tag('head.png')
-          li.hat
-            = image_tag('stamp-alone.png')
+.container.centerize
+  #howto
+    .inner 
+      h1.cook HOW TO COOKIO  
+      #hello
+          ul#staggered-test.col.offset-8m
+            div.pointer
+              li.finger
+                h4#res Click create a reservation
+                = image_tag('pointer.png')
+            div.form   
+              li.form
+                h4#paper Fill in the details.
+                = image_tag('form.png')
+            div.head    
+              li.head
+                h4#brain Sit back and relax
+                = image_tag('head.png')
+            div.hat    
+              li.hat
+                h4#cap Our chef will come to you.
+                = image_tag('stamp-alone.png')
 
+/ #howto
+/   .inner
+/     h1.cook HOW TO COOKIO
+/     #hello
+/         ul#staggered-test.col.offset-8m
+/           li.pointer
+/             = image_tag('pointer.png')
+/           li.form
+/             = image_tag('form.png')
+/           li.hand
+/             = image_tag('head.png')
+/           li.hat
+/             = image_tag('stamp-alone.png')
 
 .become-a-chef
   p Become a Chef! #{link_to 'Click Here', new_chef_path}
@@ -59,8 +79,4 @@
     = link_to 'Make a Reservation', new_reservation_path
   - elsif @logged_in_chef
     = link_to 'All Reservations', reservations_path
-- @recipes.each do |r|
-  - if @logged_in_user
-    = link_to image_tag( r.image, height: '300', width: '300' ), new_reservation_path(recipe:r.id)
-  - else
-    = link_to image_tag(r.image, height: '300', width: '300'), login_user_path
+=render 'recipes/show_recipes'

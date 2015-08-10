@@ -1,4 +1,13 @@
-.nav_logo{
+nav {
+  background-color: #F5F5F5;
+  box-shadow:0px 2px 2px #C2C2C2;
+}
+
+nav ul a{
+  color:#666666;
+}
+
+nav .nav_logo{
   width: auto !important;
   height: 2rem !important;
 }

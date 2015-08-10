@@ -1,25 +1,68 @@
-.container
- = div_for(@recipes, class: 'box testing') do |recipe|
-     .col.s12.m3
-      .card.green.darken-1
-        .card-chef.black-text
-          span.card-title.black-text #{recipe.title}
-          .admin_buttons
-            - if is_admin?
-              .destroy
-                = link_to "Destroy", recipe, method: :delete, data: {confirm: "Are you sure you would like to destroy this recipe?"}
-              .edit
-                = link_to "Edit", edit_recipe_path(recipe)
-            p.align-center
-              = image_tag(recipe.image, height: '300', width: '300')
-            .recipe_ingredients
-              = content_tag :div do
-
-                -JSON.parse(recipe.ingredients).each_with_index do |item, index|
-                  = if index >= 7
-                    = ' - '
+- until @i >= @num_rows
+  .row
+    .col.s12.m3.recipe.offset-m2
+      .image
+        = link_to image_tag( @recipes[@i].image, height: '160', width: '360' ), new_reservation_path(recipe:@recipes[@i].id)
+        - if is_admin?
+          .admin_recipe_buttons
+            span.destroy
+              = link_to "Destroy", @recipes[@i], method: :delete, data: { confirm: "Are you sure you would like to destroy this recipe?" }
+            span.edit
+              = link_to "Edit", edit_recipe_path(@recipes[@i])
+      ul.collapsible.recipe data-collapsible="accordion"
+        li
+          .collapsible-header
+            i.material-icons menu
+            =truncate(@recipes[@i].title,escape: false ,length: 29)
+          .collapsible-body
+            .row
+              .recipe_foldout_title
+                = @recipes[@i].title
+            .row.valign-wrapper.recipe_dropdown
+              .col.s5
+                = content_tag :div do
+                  -JSON.parse(@recipes[@i].ingredients).each_with_index do |item, index|
+                    = '- '
                     span
                       = item
                     <br>
-            .recipe_info
-              = truncate(recipe.recipe)
+              .col.s5.valign.offset-s1.reserve_recipe_button
+                = link_to new_reservation_path(recipe:@recipes[@i].id)
+                  button.waves-effect.waves-light.btn Reserve
+            .row
+              .recipe_text
+                = @recipes[@i].recipe
+                - @i += 1
+    .col.s12.m3.recipe.offset-m2
+      .image
+        = link_to image_tag(@recipes[@i].image, height: '160', width: '360'), new_reservation_path(recipe: @recipes[@i].id)
+        - if is_admin?
+          .admin_recipe_buttons
+            span.destroy
+              = link_to "Destroy", @recipes[@i], method: :delete, data: { confirm: "Are you sure you would like to destroy this recipe?" }
+            span.edit
+              = link_to "Edit", edit_recipe_path(@recipes[@i])
+      ul.collapsible.recipe data-collapsible="accordion"
+        li
+          .collapsible-header
+            i.material-icons menu
+            =truncate(@recipes[@i].title, escape: false, length: 29)
+          .collapsible-body
+            .row
+              .recipe_foldout_title
+                = @recipes[@i].title
+            .row.valign-wrapper.recipe_dropdown
+              .col.s5
+                = content_tag :div do
+                  -JSON.parse(@recipes[@i].ingredients).each_with_index do |item, index|
+                    = '- '
+                    span
+                      = item
+                    <br>
+              .col.s5.valign.offset-s1.reserve_recipe_button
+                = link_to new_reservation_path(recipe: @recipes[@i].id)
+                  button.waves-effect.waves-light.btn Reserve
+            .row
+              .recipe_text
+                = @recipes[@i].recipe
+                - @i += 1
