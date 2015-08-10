@@ -36,3 +36,24 @@
             = f.file_field :image
         .row.recipe_submit_button
           =render 'home/update_button'
+/.row
+/  .form-wrapper
+/    .large-6.columns
+/      .signup-panel
+/        p.welcome New Recipe
+/        = simple_form_for @recipe do |f|
+/          .row.collapse
+/            .small-10.columns
+/              = f.input :title
+/          .row.collapse
+/            .small-10.columns
+/              = f.input :ingredients
+/          .row.collapse
+/            .small-10.columns
+/              = f.input :recipe
+/          .row.collapse
+/            .small-10.columns
+/              = f.file_field :image
+/          .row.collapse
+/            .small-10.columns
+/              = f.button :submit

@@ -19,6 +19,7 @@
 *= require select_box
 *= require home
 *= require animation
+*= require recipes
 *= require_self
 */
 
