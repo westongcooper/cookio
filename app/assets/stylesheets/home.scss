@@ -237,7 +237,7 @@
 #hello {
     position: relative;
     // top: -500px;
-    width: 60%;
+    width: 100%;
     // -webkit-animation: animation 2000ms linear both;
     // animation: animation 2000ms linear both;
 }
@@ -261,8 +261,9 @@
 }
 
 .pointer {
-  padding-top: 50px;
+  // padding-top: 50px;
   padding-bottom: 50px;
+
 }
 
 .form{
@@ -283,18 +284,22 @@
 
 #res {
   padding-bottom: 10px;
+  font-family: "Gotham-condensed"
 }
 
 #paper{
   padding-bottom: 10px;
+  font-family: "Gotham-condensed"
 }
 
 #brain {
   padding-bottom: 10px;
+  font-family: "Gotham-condensed"
 }
 
 #cap {
   padding-bottom: 10px;
+  font-family: "Gotham-condensed"
 }
 
 

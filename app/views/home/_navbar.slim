@@ -7,8 +7,8 @@ nav
         i.material-icons
           |menu
     ul.right.hide-on-med-and-down
-      li
-        == link_to 'Mobile', home_mobile_path
+      / li
+      /   == link_to 'Mobile', home_mobile_path
       -if is_admin?
         li
           => link_to 'admin', recipes_path
@@ -38,8 +38,8 @@ nav
         li
           = link_to 'Sign Out', logout_path
     ul.side-nav#mobile-demo
-      li
-        == link_to 'Mobile', home_mobile_path
+      / li
+      /   == link_to 'Mobile', home_mobile_path
       -if is_admin?
         li
           => link_to 'admin', recipes_path

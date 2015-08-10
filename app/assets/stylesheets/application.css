@@ -23,7 +23,7 @@
 *= require_self
 */
 
-h3 {
+p, h1, h3 {
    font-family: "Gotham-condensed"
 }
 
