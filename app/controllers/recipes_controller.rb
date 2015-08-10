@@ -3,6 +3,8 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all.order('updated_at DESC')
+    @num_rows = @recipes.count - 1
+    @i = 0
   end
   def new
     @recipe = Recipe.new

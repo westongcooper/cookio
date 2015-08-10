@@ -19,6 +19,7 @@
 //= require reservation
 //= require animation
 //= require Materialize/sideNav
+// require recipes
 // require_tree .
 
 function ready() {

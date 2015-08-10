@@ -1,0 +1,31 @@
+div.col.recipe{
+  padding:0;
+}
+ul.collapsible.recipe{
+  margin-top:0;
+}
+div.image img{
+  position:relative;
+  top:6.25px;
+}
+.recipe_dropdown{
+  margin-top:5px;
+}
+.recipe_text{
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:5px;
+  border-top: dotted dimgrey 1px;
+}
+.admin_recipe_buttons{
+  float:right;
+  margin-top:13px;
+  span{
+    margin-right:10px;
+  }
+}
+.recipe_foldout_title{
+  padding:10px;
+  font-size:1.3rem;
+  border-bottom:dotted dimgrey 1px;
+}
