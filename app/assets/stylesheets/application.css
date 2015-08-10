@@ -18,6 +18,7 @@
 *= require nav_bar
 *= require select_box
 *= require home
+*= require animation
 *= require_self
 */
 
