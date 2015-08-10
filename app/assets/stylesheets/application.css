@@ -19,6 +19,7 @@
 *= require select_box
 *= require home
 *= require animation
+*= require recipes
 *= require_self
 */
 
@@ -127,6 +128,15 @@ ul .straighten{
     width:30%;
     margin-top: 20px;
 }
+
+/*ul.collapsible.recipe{*/
+    /*margin-top:0;*/
+    /*padding-top:0;*/
+    /*position:relative;*/
+    /*top:-10px;*/
+/*}*/
+
+
 .please-work{
     margin-left:10px;
 }
