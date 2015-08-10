@@ -15,7 +15,7 @@ class ChefsController < ApplicationController
     @chef = Chef.new chef_params
     if @chef.save
       session[:chef_id] = @chef.id
-      # ChefMailer.welcome_email(@chef).deliver
+      ChefMailer.welcome_email(@chef).deliver_now
       redirect_to reservations_path, flash:{notice: 'Created chef and logged in'}
     else
       render action: 'new', flash:{notice: 'Please try again'}
