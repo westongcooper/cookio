@@ -7,7 +7,8 @@ animate = function(){
     accordion : true // A setting that changes the collapsible behavior to expandable instead of the default accordion style
   });
   var options = [
-    {selector: '.make-a-reservation', offset: 1000, callback: "Materialize.showStaggeredList('#staggered-test')" }
+    {selector: '.finger', offset: 1000, callback: "Materialize.fadeInImage('#staggered-text')" },
+    {selector: '.finger', offset: 1000, callback: "Materialize.showStaggeredList('#staggered-image')" }
   ];
   Materialize.scrollFire(options);
 };
