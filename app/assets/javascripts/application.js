@@ -15,14 +15,18 @@
 //= require jquery-ui
 //= require turbolinks
 //= require materialize
-//= require Materialize/cards
+// require Materialize/cards
 //= require reservation
 //= require animation
-//= require Materialize/sideNav
+// require Materialize/sideNav
 // require recipes
 // require_tree .
 
-function ready() {
+function start_js() {
+  var notice = $('span.notice').text();
+  if (notice != ""){
+    Materialize.toast(notice, 3000, 'toast_notice');
+  }
   $('button span').text("$20.00 - Pay with card");
   $("#hamburger").click(function () {
     $("#menu-list").toggleClass("opacity");
@@ -36,16 +40,14 @@ function ready() {
     $('#payment').text(priceToDisplay);
     $('button span').text(priceToDisplay + " - Pay with card");
   });
-
-
-
 }
 
-
-$(document).on('ready page:load', ready);
 $(function() {
   $('.datepicker').datepicker({
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 15 // Creates a dropdown of 15 years to control year
 })});
+
+$(document).on('ready page:load', start_js);
+
 

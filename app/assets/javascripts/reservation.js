@@ -20,7 +20,7 @@ var reservation_validations = function(){
   };
 
   if (!validation_helper(reservation_stats)){
-    console.log('Please enter all fields.');
+    Materialize.toast('Please enter all fields.', 3000, 'toast_alert');
     return false;
   }
   return true;
@@ -30,6 +30,7 @@ payAction = function(){
   var handler = StripeCheckout.configure({
     key: 'pk_test_e8QtgSkRSPlLShtgpcB72KyR',
     token: function(token) {
+      Materialize.toast('Processing...', 4000, 'toast_pay');
       var plates = $('#reservation_plates').val();
       var total = parseInt(plates)*2000+'';
       var time = $("#reservation_time").val();
@@ -68,9 +69,9 @@ payAction = function(){
           $("#reservation_state").val("");
           $("#reservation_zip").val("");
           $("#reservation_phone").val("");
-          alert("reservation Complete! You will receive confirmation email in few minutes.");
-          window.location=$('.My_Account').attr('href');
-        },
+          Materialize.toast('Reservation Complete!',1000,'toast_notice',function(){
+            window.location=$('.My_Account').attr('href')});
+          },
         error: function(request, error) {
           console.log(arguments);
           alert("failure");

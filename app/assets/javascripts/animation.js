@@ -17,5 +17,4 @@ print_stuff2 = function(){
   console.log('animate');
 };
 
-$(document).ready(animate());
-$(document).on('page:load', animate());
+$(document).on('ready page:load', animate);
