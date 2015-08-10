@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/mobile'
 
+  get 'home/aboutus'
 
   resources :users, :recipes
   post 'reservations/new' => 'charges/new', as: 'new_charge'

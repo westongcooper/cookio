@@ -25,6 +25,7 @@ body{
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    width: 100%;
 }
 main {
     flex: 1 0 auto;
@@ -104,4 +105,11 @@ textarea#input-field{
 }
 ul.testing{
     display: inline-block;
+}
+.center-align .aboutus{
+    display: inline-flex;
+    text-align: center;
+}
+.aboutus li{
+    margin-left: 175px;
 }
