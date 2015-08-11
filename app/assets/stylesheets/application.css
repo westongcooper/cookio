@@ -22,10 +22,10 @@
 *= require recipes
 *= require_self
 */
-
+/*
 p, h1, h3 {
    font-family: "Gotham-condensed"
-}
+}*/
 
 body{
     display: flex;
