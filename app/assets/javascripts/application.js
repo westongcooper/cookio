@@ -18,6 +18,7 @@
 // require Materialize/cards
 //= require reservation
 //= require animation
+//= require validation.js
 // require Materialize/sideNav
 // require recipes
 // require_tree .
