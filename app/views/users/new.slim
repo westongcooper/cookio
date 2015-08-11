@@ -11,7 +11,7 @@
                 |star
               i.material-icons.prefix
                 |email
-              = f.text_field :email, class:'validate'
+              = f.text_field :email, class:'validate email'
               = f.label :email
           .row
             .input-field.col.m6.s12
@@ -19,13 +19,13 @@
                 |star
               i.material-icons.prefix
                 |face
-              = f.text_field :first_name, class: 'validate'
+              = f.text_field :first_name, class:'validate first_name'
               = f.label :first_name
             .input-field.col.m6.s12
               i.material-icons.prefix.tiny.right-align
                 |star
               i.material-icons.prefix
-              = f.text_field :last_name, class: 'validate'
+              = f.text_field :last_name, class:'validate last_name'
               = f.label :last_name
           .row
             .input-field.col.m6.s12
@@ -33,13 +33,13 @@
                 |star
               i.material-icons.prefix
                 |vpn_key
-              = f.password_field :password, class: 'validate'
+              = f.password_field :password, class:'validate password'
               = f.label :password
             .input-field.col.m6.s12
               i.material-icons.prefix.tiny.right-align
                 |star
               i.material-icons.prefix
-              = f.password_field :password_confirmation, class: 'validate'
+              = f.password_field :password_confirmation, class:'validate password_confirmation'
               = f.label :password_confirmation, 'Password Again'
           .row
             =render 'sessions/submit'
