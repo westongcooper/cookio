@@ -2,62 +2,73 @@ nav
   .nav-wrapper
     = link_to root_path, class:'logo_link brand-logo left'
       = image_tag 'name_logo.png', alt: 'Link to Home with logo', class: 'nav_logo'
-    a.button-collapse.right href='#' data-activities= "mobile-demo"
-      i.material-icons
-        |menu
-    ul.right.hide-on-med-and-down.nav_right_buttons
+    a.button-collapse.right data-activates="mobile-demo" href="#"
+      i.material-icons.top menu
+    ul.right.hide-on-med-and-down
       li
         => link_to 'Recipes', recipes_path
-      -if is_admin?
-        li
+      li
+        -if is_admin?
           = link_to 'Chefs', chefs_path
-      -if no_one_logged_in?
-        li
+      li
+        -if no_one_logged_in?
           = link_to 'New User', new_user_path
-        li
+      li
+        -if no_one_logged_in?
           = link_to 'New Chef', new_chef_path
-        li
+      li
+        -if no_one_logged_in?
           = link_to 'Chef Login', login_chef_path
-        li
+      li
+        -if no_one_logged_in?
           = link_to 'User Login', login_user_path
-      -if !is_admin? && current_user
-        li
+      li
+        -if !is_admin? && current_user
+          = link_to 'User Login', login_user_path
+      li
+        -if !is_admin? && current_user
           = link_to 'New Reservation', reservations_new_path
-      -if current_chef
-        li
+      li
+        -if current_chef
           = link_to 'Reservations', reservations_path
-      -if someone_logged_in?
-        -if not is_admin?
-          li
-            = link_to 'My Account', (@chef || @user), class:"My_Account"
-        li
+      li
+        -if someone_logged_in?
+          -if not is_admin?
+            = link_to 'My Account', (@chef || @user), class: "My_Account"
+      li
+        -if someone_logged_in?
           = link_to 'Sign Out', logout_path
     ul#mobile-demo.side-nav
       li
         => link_to 'Recipes', recipes_path
-      -if is_admin?
-        li
+      li
+        -if is_admin?
           = link_to 'Chefs', chefs_path
-      -if no_one_logged_in?
-        li
+      li
+        -if no_one_logged_in?
           = link_to 'New User', new_user_path
-        li
+      li
+        -if no_one_logged_in?
           = link_to 'New Chef', new_chef_path
-        li
+      li
+        -if no_one_logged_in?
           = link_to 'Chef Login', login_chef_path
-        li
+      li
+        -if no_one_logged_in?
           = link_to 'User Login', login_user_path
-      -if !is_admin? && current_user
-        li
+      li
+        -if !is_admin? && current_user
+          = link_to 'User Login', login_user_path
+      li
+        -if !is_admin? && current_user
           = link_to 'New Reservation', reservations_new_path
-      -if current_chef
-        li
+      li
+        -if current_chef
           = link_to 'Reservations', reservations_path
-      -if someone_logged_in?
-        -if not is_admin?
-          li
-            = link_to 'My Account', (@chef || @user), class: "My_Account"
-        li
-            = link_to 'Sign Out', logout_path
-span.notice
-  = notice
+      li
+        -if someone_logged_in?
+          -if not is_admin?
+            = link_to 'My Account', (@chef || @user), class:"My_Account"
+      li
+        -if someone_logged_in?
+          = link_to 'Sign Out', logout_path

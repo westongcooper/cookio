@@ -6,6 +6,10 @@ class ChefsController < ApplicationController
   def index
     @chefs_inactive = Chef.where(active:false).limit(20)
     @chefs_active = Chef.where(active:true).limit(10)
+    @chefs_inactive_count = @chefs_inactive.count - 1
+    @chef_i = 0
+    @chefs_active_count = @chefs_active.count - 1
+    @chef_j = 0
   end
   def new
     @profile = Chef.new
