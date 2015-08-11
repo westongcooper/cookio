@@ -102,61 +102,61 @@ reservations = 1
                   phone: get_phone(n+1000),
                   active: true,
                   password_digest:BCrypt::Password.create(n))
-  if n % reservation_factor == 0
-    reservations += 1
-    r = Reservation.create(user_id:u.id,
-                         recipe_id:rand(10)+1,
-                         details:Faker::Lorem.sentence,
-                         date:date,
-                         time:get_time,
-                         address:a,
-                         address2:a2,
-                         city:city,
-                         state:'FL',
-                         zip:zip,
-                         plates:rand(6)+2,
-                         phone:phone)
-    if reservations % 2 == 0
-      num_m = rand(4)
-      r.chef_id = c.id
-      r.save
-      num_m.times do |i|
-        if i % 2 == 0
-          m = Message.create(chef_id:c.id,
-                             reservation_id:r.id,
-                             message:Faker::Hacker.say_something_smart)
-        else
-          m = Message.create(user_id:u.id,
-                             reservation_id:r.id,
-                             message:Faker::Hacker.say_something_smart)
-        end
-      end
-    else
-      if date < Date.today
-        if n % 4 == 0
-          r.canceled = true
-          r.save
-        else
-          r.chef_id = c.id
-          r.save
-        end
-      else
-        if n % 10 == 0
-          r.canceled = true
-          r.save
-        end
-      end
-    end
-  end
+  # if n % reservation_factor == 0
+  #   reservations += 1
+  #   r = Reservation.create(user_id:u.id,
+  #                        recipe_id:rand(10)+1,
+  #                        details:Faker::Lorem.sentence,
+  #                        date:date,
+  #                        time:get_time,
+  #                        address:a,
+  #                        address2:a2,
+  #                        city:city,
+  #                        state:'FL',
+  #                        zip:zip,
+  #                        plates:rand(6)+2,
+  #                        phone:phone)
+  #   if reservations % 2 == 0
+  #     num_m = rand(4)
+  #     r.chef_id = c.id
+  #     r.save
+  #     num_m.times do |i|
+  #       if i % 2 == 0
+  #         m = Message.create(chef_id:c.id,
+  #                            reservation_id:r.id,
+  #                            message:Faker::Hacker.say_something_smart)
+  #       else
+  #         m = Message.create(user_id:u.id,
+  #                            reservation_id:r.id,
+  #                            message:Faker::Hacker.say_something_smart)
+  #       end
+  #     end
+  #   else
+  #     if date < Date.today
+  #       if n % 4 == 0
+  #         r.canceled = true
+  #         r.save
+  #       else
+  #         r.chef_id = c.id
+  #         r.save
+  #       end
+  #     else
+  #       if n % 10 == 0
+  #         r.canceled = true
+  #         r.save
+  #       end
+  #     end
+  #   end
+  # end
 end
-3.times do
-  Recipe.create(title:'Chicken With Salad',
-                ingredients: '["chicken", " salad", " veggies", " dressing"]',
-                recipe:'Id kielbasa deserunt pork andouille qui proident brisket. Ground round landjaeger cillum, lorem brisket hamburger excepteur. Brisket flank minim, et mollit cupim andouille quis ground round.')
-  Recipe.create(title:'Steak and Potatoes',
-                ingredients: '["Steak", " Potatoes", " Butter"]',
-                recipe:'FeId kielbasa deserunt pork andouille qui proident brisket. Ground round landjaeger cillum, lorem brisket hamburger excepteur. Brisket flank minim, et mollit cupim andouille quis ground round.')
-  Recipe.create(title:'Baked Chicken',
-                ingredients: '["chicken", " salad", " veggies", " dressing"]',
-                recipe:'Id kielbasa deserunt pork andouille qui proident brisket. Ground round landjaeger cillum, lorem brisket hamburger excepteur. Brisket flank minim, et mollit cupim andouille quis ground round.')
-end
+# 3.times do
+#   Recipe.create(title:'Chicken With Salad',
+#                 ingredients: '["chicken", " salad", " veggies", " dressing"]',
+#                 recipe:'Id kielbasa deserunt pork andouille qui proident brisket. Ground round landjaeger cillum, lorem brisket hamburger excepteur. Brisket flank minim, et mollit cupim andouille quis ground round.')
+#   Recipe.create(title:'Steak and Potatoes',
+#                 ingredients: '["Steak", " Potatoes", " Butter"]',
+#                 recipe:'FeId kielbasa deserunt pork andouille qui proident brisket. Ground round landjaeger cillum, lorem brisket hamburger excepteur. Brisket flank minim, et mollit cupim andouille quis ground round.')
+#   Recipe.create(title:'Baked Chicken',
+#                 ingredients: '["chicken", " salad", " veggies", " dressing"]',
+#                 recipe:'Id kielbasa deserunt pork andouille qui proident brisket. Ground round landjaeger cillum, lorem brisket hamburger excepteur. Brisket flank minim, et mollit cupim andouille quis ground round.')
+# end
