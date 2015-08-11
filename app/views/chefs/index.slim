@@ -1,3 +1,5 @@
+h3.center.recipe Chefs
+h6.center.recipe_link
 .container
   .row
     .col.s12
@@ -6,78 +8,84 @@
           a.active href="#test1"  Inactive Chefs
         li.tab.col.s3
           a href="#test2"  Active Chefs
-
-
-    #test1.col.s12
-      .chefs.center-align
-        - if @chefs_inactive.count > 0
-          h1 inactive chefs
-          .chefs-inactive
-            - @chefs_inactive.each do |chef|
-              = div_for(chef, class: 'row testing l3 ') do
-                .col.s10
-                  .card.red.lighten-5
-                    .card-chefs.black-text.resize
-                      span.card-title.black-text #{chef.first_name}
-                      <br>
-                      span.card-title.black-text #{chef.last_name}
-                      ul
-                        li
-                          p
-                            = chef.email
-                        li
-                          p
-                            = chef.phone
-                        li
-                          p
-                            = chef.address
-                        li
-                          p
-                            = chef.address2
-                        li
-                          p
-                            = chef.city
-                        li
-                          p
-                            = chef.state
-                        li
-                          p
-                            = chef.zip
-                    .card-action
-                      = link_to "toggle active", toggle_active_chef_path(chef.id), method: :post
-
-    #test2.col.s12
-      .chefs-active.center-align
-        h1 active chefs
-        - @chefs_active.each do |chef|
-          = div_for(chef, class: 'row testing ') do
-            .col.s16.l12
-              .card.blue.accent-2
-                .card-chefs.white-text
-                  span.card-title #{chef.first_name}
-                  <br>
-                  span.card-title #{chef.last_name}
-                  ul
-                    li
-                      p
-                        = chef.email
-                    li
-                      p
-                        = chef.phone
-                    li
-                      p
-                        = chef.address
-                    li
-                      p
-                        = chef.address2
-                    li
-                      p
-                        = chef.city
-                    li
-                      p
-                        = chef.state
-                    li
-                      p
-                        = chef.zip
-                .card-action
-                  = link_to "toggle active", toggle_active_chef_path(chef.id), method: :post
+  - until @chef_i > @chefs_inactive_count
+    .row.recipe_partial
+      .col.s12.m5.l3.recipe.offset-m1.offset-l1
+        .image
+          =
+          -@chef_i += 1
+/
+/
+/    #test1.col.s12
+/      .chefs.center-align
+/        - if @chefs_inactive.count > 0
+/          h1 inactive chefs
+/          .chefs-inactive
+/            - @chefs_inactive.each do |chef|
+/              = div_for(chef, class: 'row testing l3 ') do
+/                .col.s10
+/                  .card.red.lighten-5
+/                    .card-chefs.black-text.resize
+/                      span.card-title.black-text #{chef.first_name}
+/                      <br>
+/                      span.card-title.black-text #{chef.last_name}
+/                      ul
+/                        li
+/                          p
+/                            = chef.email
+/                        li
+/                          p
+/                            = chef.phone
+/                        li
+/                          p
+/                            = chef.address
+/                        li
+/                          p
+/                            = chef.address2
+/                        li
+/                          p
+/                            = chef.city
+/                        li
+/                          p
+/                            = chef.state
+/                        li
+/                          p
+/                            = chef.zip
+/                    .card-action
+/                      = link_to "toggle active", toggle_active_chef_path(chef.id), method: :post
+/
+/    #test2.col.s12
+/      .chefs-active.center-align
+/        h1 active chefs
+/        - @chefs_active.each do |chef|
+/          = div_for(chef, class: 'row testing ') do
+/            .col.s16.l12
+/              .card.blue.accent-2
+/                .card-chefs.white-text
+/                  span.card-title #{chef.first_name}
+/                  <br>
+/                  span.card-title #{chef.last_name}
+/                  ul
+/                    li
+/                      p
+/                        = chef.email
+/                    li
+/                      p
+/                        = chef.phone
+/                    li
+/                      p
+/                        = chef.address
+/                    li
+/                      p
+/                        = chef.address2
+/                    li
+/                      p
+/                        = chef.city
+/                    li
+/                      p
+/                        = chef.state
+/                    li
+/                      p
+/                        = chef.zip
+/                .card-action
+/                  = link_to "toggle active", toggle_active_chef_path(chef.id), method: :post

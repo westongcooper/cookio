@@ -175,6 +175,10 @@
   }
 }
 
+.message_content{
+  margin-bottom:0.5rem;
+}
+
 
 // body {
 //   /* Location of the image */
@@ -473,7 +477,9 @@ button.submit_button {
 
 }
 
-
+i.material-icons.top{
+  color:black;
+}
 /* valid color */
 .input-field input[type=text].valid {
   border-bottom: 1px solid #40c4ff;
