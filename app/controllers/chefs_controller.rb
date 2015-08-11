@@ -30,7 +30,7 @@ class ChefsController < ApplicationController
     # @chef_old_confirmations = Reservation.chef_old(current_chef)
     @reservations = Reservation.chef(current_chef)
     # @chef_reservations = Reservation.available
-    @profile = @chef
+    @profile = current_chef
     @num_rows = @reservations.count
     @i = 0
   end
