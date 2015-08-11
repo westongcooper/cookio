@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      UserMailer.welcome_email(@user).deliver_now
+      # UserMailer.welcome_email(@user).deliver_now
       redirect_to @user , flash:{notice: 'created user and logged in'}
     else
       render action: 'new', flash:{notice:'please try again'}

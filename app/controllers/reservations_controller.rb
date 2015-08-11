@@ -32,7 +32,7 @@ class ReservationsController < ApplicationController
   def create
     @reservation = current_user.reservations.new reservation_params.except(:stripeToken, :amount)
     if @reservation.save
-      ReservationMailer.new_reservation(@reservation).deliver_now
+      # ReservationMailer.new_reservation(@reservation).deliver_now
 
       customer = Stripe::Customer.create(
         :email => reservation_params[:stripeEmail],
