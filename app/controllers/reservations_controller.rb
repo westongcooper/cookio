@@ -3,7 +3,7 @@ class ReservationsController < ApplicationController
   before_action :require_logged_in
   before_action :require_chef, only: :index
   before_action :belongs_to_or_nil_or_admin, only: :show
-  before_action :belongs_to_user_or_admin, only: :destroy
+  before_action :belongs_to_user_or_admin, only: [:destroy, :show, :update]
 
   include ApplicationHelper
   def index
@@ -20,15 +20,11 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    if current_user
-      @reservation = current_user.reservations.find(params[:id])
-    elsif current_chef
-      @reservation = Reservation.find(params[:id])
-    end
+    @reservation = Reservation.find(params[:id])
     @messages = Message.where(reservation_id: params[:id]).includes(:user, :chef)
     @user = @reservation.user
     @chef = @reservation.chef
-    @new_reservations_message = Message.new
+    @new_message = Message.new
   end
 
   def create

@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :current_chef, :is_logged_in, :is_admin?, :belongs_to_chef
+  helper_method :current_user, :current_chef, :is_logged_in, :is_admin?, :belongs_to_chef,
+                :belongs_to_or_nil_or_admin, :belongs_to_user_or_admin, :belongs_to_user
   private
     def current_user
       @current_user ||= User.find_by(id: session[:user_id])

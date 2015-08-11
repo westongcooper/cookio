@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20150805232041) do
     t.integer  "user_id"
     t.integer  "chef_id"
     t.integer  "reservation_id", null: false
-    t.string   "subject",        null: false
     t.text     "message",        null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false

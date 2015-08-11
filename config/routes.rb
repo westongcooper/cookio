@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   end
   get 'reservations/show'
   patch 'reservations/show'
-
+  post 'reservations/:id' => 'messages#create', as: 'messages'
 
   post 'chefs' => 'chefs#create'
   get 'chefs' => 'chefs#index', as: 'chefs_admin'

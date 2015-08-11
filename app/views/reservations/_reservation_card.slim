@@ -1,23 +1,145 @@
-= div_for(reservation, class: 'card medium') do
-  .card-image.waves-effect.waves-block.waves-light
-    .activator
-      = image_tag(reservation.recipe.image)
-  .card-content
-    span.card-title.activator.grey-text.text-darken-4
-      = truncate(reservation.recipe.title, length: 60)
-      i.material-icons.right more_vert
-    p
-      = link_to 'More Information', reservation
-  .card-reveal
-    span.card-title.grey-text.text-darken-4
-      = reservation.recipe.title
-      i.material-icons.right close
-    h5 Customer: <span>#{reservation.user.name}</span>
-    = if reservation.chef
-      h5 Chef: <span>#{reservation.chef.first_name}</span>
-    h5 Date: <span>#{reservation.date.to_s + " " + reservation.time.to_s}</span>
-    h5 Address: <span>#{reservation.address + " " + reservation.address2}</span>
-    h5 Details:
-    h6
-      = reservation.details
-    = link_to 'More Information', reservation
+.row.single_recipe_partial
+  .col.l4.m12.s12.recipe_info
+    .row.l12.recipe_1image
+      =image_tag @reservation.recipe.image, class: 'responsive_single_img'
+    .row.reservation_1info
+      .rh3
+        |Chef:
+        - if @reservation.chef_id
+          span
+            =@reservation.chef.first_name
+        - else
+          span
+            | TBD
+      .rh3
+        |Date:
+        span
+          =@reservation.date.to_date.to_formatted_s :long_ordinal
+      .rh3
+        |Time:
+        span
+          =@reservation.time
+    .row.recipe_1info
+      ul.collapsible.recipe data-collapsible="accordion"
+        li
+          .collapsible-header
+            i.material-icons menu
+            =truncate(@reservation.recipe.title, escape: false, length: 29)
+          .collapsible-body.recipe_box
+            .row
+              .recipe_foldout_title.fix
+                = @reservation.recipe.title
+            .row.valign-wrapper.recipe_dropdown
+              .col.s5
+                = content_tag :div do
+                  -JSON.parse(@reservation.recipe.ingredients).each_with_index do |item, index|
+                    = '- '
+                    span
+                      = item
+                    <br>
+            .row
+              .recipe_text
+                = @reservation.recipe.recipe
+  .col.l7.m12.s12.reservation_1messages
+    .row
+      h5.message-title.center-align messages
+      - if @messages
+        - @messages.each do |message|
+          - if message.user_id
+            .message_container_user
+              .message_content
+                .message_name
+                .user_Message_name
+                  = @user.first_name
+                  |:
+                .message_message
+                  = message.message
+          -else
+            .message_container_chef
+              .message_content
+                .message_name
+                  span.chef_title chef:
+                  .chef_Message_name
+                    = @chef.first_name
+                    |:
+                .message_message
+                  = message.message
+    .row
+      = render 'messages/new_message'
+
+
+        /.row
+        /  .col.m10.offset-m1.s12
+        /    h5.center-align
+        /      | New Message
+        /.row
+        /  = form_for [@reservation, @new_reservations_message] do |f|
+        /    .row
+        /      .input-field.col.m8.offset-m2.s12
+        /        = f.text_field :message, class:'validate'
+        /        = f.label :message
+        /        = f.submit
+        /.reserve
+        /  - if current_chef.chef_id
+        /    - if (current_chef && @reservation.chef_id) != current_chef.id
+        /      = link_to "reserve", @reservation, method: :patch
+        /    -if  (current_chef && @reservation.chef_id) == current_chef.id
+        /.image
+        /  = link_to new_reservation_path(recipe:@reservation.recipe.id)
+        /    =image_tag @reservation.recipe.image, class:'responsive_single_img'
+        /  - if is_admin?
+        /    .admin_recipe_buttons
+        /      span.destroy
+        /        = link_to "Destroy", @reservation.recipe, method: :delete, data: { confirm: "Are you sure you would like to destroy this recipe?" }
+        /      span.edit
+        /        = link_to "Edit", edit_recipe_path(@reservation.recipe)
+        /ul.collapsible.recipe data-collapsible="accordion"
+        /  li
+        /    .collapsible-header
+        /      i.material-icons menu
+        /      =truncate(@reservation.recipe.title,escape: false ,length: 29)
+        /    .collapsible-body
+        /      .row
+        /        .recipe_foldout_title
+        /          = @reservation.recipe.title
+        /      .row.valign-wrapper.recipe_dropdown
+        /        .col.s5
+        /          = content_tag :div do
+        /            -JSON.parse(@reservation.recipe.ingredients).each_with_index do |item, index|
+        /              = '- '
+        /              span
+        /                = item
+        /              <br>
+        /        .col.s5.valign.offset-s1.reserve_recipe_button
+        /          = link_to new_reservation_path(recipe:@reservation.recipe.id)
+        /            button.waves-effect.waves-light.btn Reserve
+        /      .row
+        /        .recipe_text
+        /          = @reservation.recipe.recipe
+
+
+
+/= div_for(reservation, class: 'card medium') do
+/  .card-image.waves-effect.waves-block.waves-light
+/    .activator
+/      = image_tag(reservation.recipe.image)
+/  .card-content
+/    span.card-title.activator.grey-text.text-darken-4
+/      = truncate(reservation.recipe.title, length: 60)
+/      i.material-icons.right more_vert
+/    p
+/      = link_to 'More Information', reservation
+/  .card-reveal
+/    span.card-title.grey-text.text-darken-4
+/      = reservation.recipe.title
+/      i.material-icons.right close
+/    h5 Customer: <span>#{reservation.user.name}</span>
+/    = if reservation.chef
+/      h5 Chef: <span>#{reservation.chef.first_name}</span>
+/    h5 Date: <span>#{reservation.date.to_s + " " + reservation.time.to_s}</span>
+/    h5 Address: <span>#{reservation.address + " " + reservation.address2}</span>
+/    h5 Details:
+/    h6
+/      = reservation.details
+/    = link_to 'More Information', reservation
+//

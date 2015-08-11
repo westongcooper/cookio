@@ -317,17 +317,113 @@
 
 
  /* label underline focus color */
-.input-field input[type=text]:focus {
- border-bottom: 1px solid #0288d1;
- box-shadow: 0 1px 0 0 #0288d1;
+//input[type=text]:focus {
+// border-bottom: 1px solid #0288d1;
+// box-shadow: 0 1px 0 0 #0288d1;
+//
+//}
+//
+//input[type=password]:focus {
+// border-bottom: 1px solid #0288d1;
+// box-shadow: 0 1px 0 0 #0288d1;
+//}
+
+
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="time"], input[type="date"], input[type="datetime-local"], input[type="tel"], input[type="number"], input[type="search"], textarea.materialize-textarea {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: transparent;
+  border-color: -moz-use-text-color -moz-use-text-color #83D3FD;
+  border-image: none;
+  border-radius: 0;
+  border-style: none none solid;
+  border-width: medium medium 3px;
+  box-shadow: none;
+  box-sizing: content-box;
+  font-size: 1rem;
+  height: 3rem;
+  margin: 0 0 15px;
+  outline: medium none;
+  padding: 0;
+  transition: all 0.3s ease 0s;
+  width: 100%;
 }
-
-.input-field input[type=password]:focus {
- border-bottom: 1px solid #0288d1;
- box-shadow: 0 1px 0 0 #0288d1;
+.select-wrapper select.select-dropdown {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: transparent;
+  border-color: -moz-use-text-color -moz-use-text-color #83D3FD;
+  border-image: none;
+  border-style: none none solid;
+  border-width: medium medium 3px;
+  cursor: pointer;
+  display: block;
+  font-size: 1rem;
+  height: 3rem;
+  line-height: 3rem;
+  margin: 0 0 15px;
+  outline: medium none;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 100%;
 }
-
-
+.container .row.single_recipe_partial {
+  margin-left: 0;
+  margin-right: 0;
+}
+.material-icons {
+  color: #1de9b6;
+}
+i.edit_message{
+  position:relative !important;
+  top:0.1rem;
+}
+.all_message_content{
+  padding-left:0.5rem;
+}
+.user_Message_name{
+  display:inline;
+  color:#00bfa5;
+  font-weight:bold;
+}
+.chef_Message_name{
+  display:inline;
+  color:#0288d1;
+  font-weight:bold;
+}
+.message_message{
+  display:inline;
+}
+input#message_message{
+  margin-left:0;
+}
+input.datepicker.valid, input.valid[type="text"], input.valid[type="text"]:focus, input.valid[type="password"], input.valid[type="password"]:focus, input.valid[type="email"], input.valid[type="email"]:focus, input.valid[type="url"], input.valid[type="url"]:focus, input.valid[type="time"], input.valid[type="time"]:focus, input.valid[type="date"], input.valid[type="date"]:focus, input.valid[type="datetime-local"], input.valid[type="datetime-local"]:focus, input.valid[type="tel"], input.valid[type="tel"]:focus, input.valid[type="number"], input.valid[type="number"]:focus, input.valid[type="search"], input.valid[type="search"]:focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus {
+  border-bottom: 3px solid #83D3FD;
+  box-shadow: 0 1px 0 0 #83D3FD;
+}
+select.minimal {
+  background-image: linear-gradient(45deg, transparent 50%, #83D3FD 50%), linear-gradient(135deg, #83D3FD 50%, transparent 50%), linear-gradient(to right, #83D3FD, #83D3FD);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-repeat: no-repeat;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+}
+select.minimal:focus {
+  background-image: linear-gradient(45deg, #0288d1 50%, transparent 50%), linear-gradient(135deg, transparent 50%, #0288d1 50%), linear-gradient(to right, #0288d1, #0288d1);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+  background-repeat: no-repeat;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  border-color: #0288d1;
+  outline: 0 none;
+}
+input[type="text"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="date"]:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="search"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 3px solid #0288d1;
+  box-shadow: 0 1px 0 0 #0288d1;
+}
 /* label focus color */
 .input-field input[type=text]:focus + label {
   color: #0288d1;
