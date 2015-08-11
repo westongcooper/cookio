@@ -47,16 +47,15 @@ img.responsive-img{
 
 }
 .recipe_card{
-  height:300px;
-  background:lightskyblue;
+  min-height:600px;
+  //background:lightskyblue;
 }
 .single_recipe_partial .recipe_info{
   margin-top: 1.5% !important;
 }
 
 //This is message Card
-.single_recipe_partial .reservation_info{
-  background-color:lightgray;
+.single_recipe_partial .reservation_1messages{
   margin-top: 1.5% !important;
 }
 
@@ -67,5 +66,39 @@ img.responsive-img{
   .single_recipe_partial .recipe_info {
     margin-left: 1.8% !important;
   }
+  .reservation_1messages{
+    border-left:dotted dimgray 1px;
+    min-height:500px;
+    margin-left:1.5% !important;
+  }
+}
+.responsive_single_img{
+  width:100%;
+  height:auto;
 }
 
+.reservation_1messages{
+}
+
+.collapsible-body.recipe_box{
+  padding: 0px 1rem;
+  background-color: #FFF;
+  border-bottom: solid #DDD 1px ;
+}
+.rh3{
+  font-weight:bold;
+}
+.rh3 span{
+  font-weight:normal;
+  margin-left:0.5rem;
+}
+.reservation_1info{
+  padding: 0px 1rem;
+}
+.message_container{
+  border-bottom: dotted dimgray 1px;
+}
+
+.message_content_chef{
+  background:#e1e1e1;
+}

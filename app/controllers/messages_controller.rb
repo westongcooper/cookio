@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
     before_action :set_post, except: :create
-\
+
     def create
 
       @message = Message.new message_params
