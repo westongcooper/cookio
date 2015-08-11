@@ -1,11 +1,9 @@
-h3.center.recipe Available Reservations
-h6.center.recipe_link
 - until @i >= @num_rows
   .row.reservation_partial
     .col.s12.m5.l3.recipe.offset-m1.offset-l1
       .image
         /= link_to make_confirmation_path(@reservations[@i]), method: :put
-        =image_tag @reservations[@i].recipe.image, class:'responsive-img'
+        =image_tag @reservations[@i].recipe.image, class: 'responsive-img'
       ul.collapsible.recipe data-collapsible="accordion"
         li
           .collapsible-header.valign-wrapper
@@ -42,35 +40,39 @@ h6.center.recipe_link
               .col.s6
                 .reservation_zip
                   span.address_header
-                  |Zip:
+                    |Zip:
                   span
                     =< @reservations[@i].zip
               .col.s6
                 .reservation_plates
                   span.address_header
-                  |Plates:
+                    |Plates:
                   span
                     =< @reservations[@i].plates
-                -if @reservations[@i].chef_id
-                  .row.valign-wrapper.recipe_dropdown
-                    .col
-                      .reservation_address
-                        span
-                          =< @reservations[@i].address
-                    .col
-                      .reservation_address2
-                        =< @reservations[@i].address2
-                -unless @reservations[@i].chef_id
-                  .row
-                    .confirm_reservation.center
-                      = link_to make_confirmation_path(@reservations[@i]), method: :put
-                        button.waves-effect.waves-light.btn Confirm
-                - @i += 1
+            -if @reservations[@i].chef_id
+              .row.valign-wrapper.recipe_dropdown
+                .col
+                  .reservation_address
+                    span
+                      =< @reservations[@i].address
+                .col
+                  .reservation_address2
+                    =< @reservations[@i].address2
+              .row
+                .center
+                  = link_to @reservations[@i]
+                    button.waves-effect.waves-light.btn More Info
+            -unless @reservations[@i].chef_id
+              .row
+                .confirm_reservation.center
+                  = link_to make_confirmation_path(@reservations[@i]), method: :put
+                    button.waves-effect.waves-light.btn Confirm
+            - @i += 1
     - unless @i >= @num_rows
       .col.s12.m5.l3.recipe.offset-m1.offset-l1
         .image
           /= link_to make_confirmation_path(@reservations[@i]), method: :put
-          =image_tag @reservations[@i].recipe.image, class:'responsive-img'
+          =image_tag @reservations[@i].recipe.image, class: 'responsive-img'
         ul.collapsible.recipe data-collapsible="accordion"
           li
             .collapsible-header.valign-wrapper
@@ -107,35 +109,39 @@ h6.center.recipe_link
                 .col.s6
                   .reservation_zip
                     span.address_header
-                    |Zip:
+                      |Zip:
                     span
                       =< @reservations[@i].zip
                 .col.s6
                   .reservation_plates
                     span.address_header
-                    |Plates:
+                      |Plates:
                     span
                       =< @reservations[@i].plates
-                -if @reservations[@i].chef_id
-                  .row.valign-wrapper.recipe_dropdown
-                    .col
-                      .reservation_address
-                        span
-                          =< @reservations[@i].address
-                    .col
-                      .reservation_address2
-                        =< @reservations[@i].address2
-                -unless @reservations[@i].chef_id
-                  .row
-                    .confirm_reservation.center
-                      = link_to make_confirmation_path(@reservations[@i]), method: :put
-                        button.waves-effect.waves-light.btn Confirm
-                - @i += 1
+              -if @reservations[@i].chef_id
+                .row.valign-wrapper.recipe_dropdown
+                  .col
+                    .reservation_address
+                      span
+                        =< @reservations[@i].address
+                  .col
+                    .reservation_address2
+                      =< @reservations[@i].address2
+                .row
+                  .center
+                    = link_to @reservations[@i]
+                      button.waves-effect.waves-light.btn More Info
+              -unless @reservations[@i].chef_id
+                .row
+                  .confirm_reservation.center
+                    = link_to make_confirmation_path(@reservations[@i]), method: :put
+                      button.waves-effect.waves-light.btn Confirm
+              - @i += 1
       - unless @i >= @num_rows
         .col.s12.m5.l3.recipe.offset-m1.offset-l1
           .image
             /= link_to make_confirmation_path(@reservations[@i]), method: :put
-            =image_tag @reservations[@i].recipe.image, class:'responsive-img'
+            =image_tag @reservations[@i].recipe.image, class: 'responsive-img'
           ul.collapsible.recipe data-collapsible="accordion"
             li
               .collapsible-header.valign-wrapper
@@ -172,13 +178,13 @@ h6.center.recipe_link
                   .col.s6
                     .reservation_zip
                       span.address_header
-                      |Zip:
+                        |Zip:
                       span
                         =< @reservations[@i].zip
                   .col.s6
                     .reservation_plates
                       span.address_header
-                      |Plates:
+                        |Plates:
                       span
                         =< @reservations[@i].plates
                 -if @reservations[@i].chef_id
@@ -190,6 +196,10 @@ h6.center.recipe_link
                     .col
                       .reservation_address2
                         =< @reservations[@i].address2
+                  .row
+                    .center
+                      = link_to @reservations[@i]
+                        button.waves-effect.waves-light.btn More Info
                 -unless @reservations[@i].chef_id
                   .row
                     .confirm_reservation.center

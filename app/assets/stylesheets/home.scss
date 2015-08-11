@@ -432,17 +432,44 @@ input[type="text"]:focus:not([readonly]), input[type="password"]:focus:not([read
 .input-field input[type=password]:focus + label {
   color: #0288d1;
 }
-
-
+.tabs.profile{
+  margin-top:20px;
+  margin-bottom:10px;
+}
+.tabs.profile a{
+  color:#0288d1 !important;
+}
+.profile div.indicator{
+ background-color: #0288d1 !important;
+}
 .row .col.offset-m3 {
     margin-left: 25%;
 }
-
+.tabs .indicator{
+  height:10px !important;
+  top:45px;
+}
 button.submit_button {
   margin-top: 20px;
 
 }
-
+span.date{
+  margin-right:1.5rem;
+}
+span.time{
+  margin-left:1.5rem;
+  margin-right:0.5rem;
+}
+span.city{
+  margin-left:0.5rem;
+}
+span.tab{
+  font-weight:bold;
+  font-size:1.5rem;
+}
+span.address_header{
+  font-weight:bold;
+}
 
 @-webkit-keyframes animation {
   0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -300, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -300, 0, 0, 1); }

@@ -1,20 +1,32 @@
-.container
-  .centerize
-    h2 #{@chef.first_name +  " "+ @chef.last_name}
-  .centerize
-    h1 My Account
+.row
+  .col.s12
+    ul.tabs.profile
+      li.tab.col.s3
+        a.active.tabs_profile href="#test1"  Current Reservations
+      li.tab.col.s3.tabs_profile
+        a href="#test2"  Profile
 
 
-  .row
-    .col.s12
-      ul.tabs
-        li.tab.col.s3
-          a.active href="#test1"  Current Reservations
-        li.tab.col.s3
-          a href="#test2"  Profile
-
-
-    #test1
-      = render 'reservations/current_reservations_chef'
-    #test2
-      = render 'home/profile'
+  #test1
+    = render 'reservations/reservation_list'
+  #test2
+    = render 'home/profile_update'
+/.container
+/  .centerize
+/    h2 #{@chef.first_name +  " "+ @chef.last_name}
+/  .centerize
+/    h1 My Account
+/
+/
+/  .row
+/    .col.s12
+/      ul.tabs
+/        li.tab.col.s3
+/          a.active href="#test1"  Current Reservations
+/        li.tab.col.s3
+/          a href="#test2"  Profile
+/
+/
+/    #test1
+/= render 'reservations/current_reservations_chef'
+/= render 'home/profile'

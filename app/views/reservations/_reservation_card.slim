@@ -19,6 +19,10 @@
         |Time:
         span
           =@reservation.time
+      .rh3
+        |Plates:
+        span
+          =@reservation.plates
     .row.recipe_1info
       ul.collapsible.recipe data-collapsible="accordion"
         li
@@ -58,10 +62,9 @@
             .message_container_chef
               .message_content
                 .message_name
-                  span.chef_title chef:
-                  .chef_Message_name
-                    = @chef.first_name
-                    |:
+                .chef_Message_name
+                  = @chef.first_name
+                  |:
                 .message_message
                   = message.message
     .row
