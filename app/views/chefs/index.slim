@@ -3,19 +3,215 @@ h6.center.recipe_link
 .container
   .row
     .col.s12
-      ul.tabs
+      ul.tabs.profile
         li.tab.col.s3
-          a.active href="#test1"  Inactive Chefs
-        li.tab.col.s3
+          a.active.tabs_profile href="#test1"  Inactive Chefs
+        li.tab.col.s3.tabs_profile
           a href="#test2"  Active Chefs
-  - until @chef_i > @chefs_inactive_count
-    .row.recipe_partial
-      .col.s12.m5.l3.recipe.offset-m1.offset-l1
-        .image
-          =
-          -@chef_i += 1
-/
-/
+
+  #test1
+    - until @chef_i > @chefs_inactive_count
+      .row.recipe_partial
+        .col.s12.m5.l3.recipe.offset-m1.offset-l1
+          .image.chef_page
+            .row.chef
+              .col.s7.m12.left_chef_city
+                i.material-icons.chefs perm_identity
+                =< @chefs_inactive[@chef_i].first_name
+                =< @chefs_inactive[@chef_i].last_name
+              .col.s5.m12.left_chef_city
+                i.material-icons.chefs phone
+                =< @chefs_inactive[@chef_i].phone
+            .row.chef
+              i.material-icons.chefs location_on
+              =< @chefs_inactive[@chef_i].address
+            .row.chef
+              -if @chefs_inactive[@chef_i].address2 != ""
+                i.material-icons.chefs.prefix location_on
+                =< @chefs_inactive[@chef_i].address2
+            .row.chef
+              .col.s6.left_chef_city
+                i.material-icons.chefs.prefix location_city
+                =< @chefs_inactive[@chef_i].zip
+              .col.s6
+                = link_to toggle_active_chef_path(@chefs_inactive[@chef_i]), method: :post
+                  btn.waves-effect.toggle_button.waves-light.btn Toggle
+            .row.chef
+              .col.left_chef_city
+                i.material-icons.chefs.prefix location_city
+                =< @chefs_inactive[@chef_i].city
+              .col
+                i.material-icons.chefs.prefix location_on
+                =< @chefs_inactive[@chef_i].state
+                -@chef_i += 1
+        - unless @chef_i > @chefs_inactive_count
+          .col.s12.m5.l3.recipe.offset-m1.offset-l1
+            .image.chef_page
+              .row.chef
+                .col.s7.m12.left_chef_city
+                  i.material-icons.chefs perm_identity
+                  =< @chefs_inactive[@chef_i].first_name
+                  =< @chefs_inactive[@chef_i].last_name
+                .col.s5.m12.left_chef_city
+                  i.material-icons.chefs phone
+                  =< @chefs_inactive[@chef_i].phone
+              .row.chef
+                i.material-icons.chefs location_on
+                =< @chefs_inactive[@chef_i].address
+              .row.chef
+                -if @chefs_inactive[@chef_i].address2 != ""
+                  i.material-icons.chefs.prefix location_on
+                  =< @chefs_inactive[@chef_i].address2
+              .row.chef
+                .col.s6.left_chef_city
+                  i.material-icons.chefs.prefix location_city
+                  =< @chefs_inactive[@chef_i].zip
+                .col.s6
+                  = link_to toggle_active_chef_path(@chefs_inactive[@chef_i]), method: :post
+                    btn.waves-effect.toggle_button.waves-light.btn Toggle
+              .row.chef
+                .col.left_chef_city
+                  i.material-icons.chefs.prefix location_city
+                  =< @chefs_inactive[@chef_i].city
+                .col
+                  i.material-icons.chefs.prefix location_on
+                  =< @chefs_inactive[@chef_i].state
+                  -@chef_i += 1
+          - unless @chef_i > @chefs_inactive_count
+            .col.s12.m5.l3.recipe.offset-m1.offset-l1
+              .image.chef_page
+                .row.chef
+                  .col.s7.m12.left_chef_city
+                    i.material-icons.chefs perm_identity
+                    =< @chefs_inactive[@chef_i].first_name
+                    =< @chefs_inactive[@chef_i].last_name
+                  .col.s5.m12.left_chef_city
+                    i.material-icons.chefs phone
+                    =< @chefs_inactive[@chef_i].phone
+                .row.chef
+                  i.material-icons.chefs location_on
+                  =< @chefs_inactive[@chef_i].address
+                .row.chef
+                  -if @chefs_inactive[@chef_i].address2 != ""
+                    i.material-icons.chefs.prefix location_on
+                    =< @chefs_inactive[@chef_i].address2
+                .row.chef
+                  .col.s6.left_chef_city
+                    i.material-icons.chefs.prefix location_city
+                    =< @chefs_inactive[@chef_i].zip
+                  .col.s6
+                    = link_to toggle_active_chef_path(@chefs_inactive[@chef_i]), method: :post
+                      btn.waves-effect.toggle_button.waves-light.btn Toggle
+                .row.chef
+                  .col.left_chef_city
+                    i.material-icons.chefs.prefix location_city
+                    =< @chefs_inactive[@chef_i].city
+                  .col
+                    i.material-icons.chefs.prefix location_on
+                    =< @chefs_inactive[@chef_i].state
+                    -@chef_i += 1
+  #test2
+    - until @chef_j > @chefs_active_count
+      .row.recipe_partial
+        .col.s12.m5.l3.recipe.offset-m1.offset-l1
+          .image.chef_page
+            .row.chef
+              .col.s7.m12.left_chef_city
+                i.material-icons.chefs perm_identity
+                =< @chefs_active[@chef_j].first_name
+                =< @chefs_active[@chef_j].last_name
+              .col.s5.m12.left_chef_city
+                i.material-icons.chefs phone
+                =< @chefs_active[@chef_j].phone
+            .row.chef
+              i.material-icons.chefs location_on
+              =< @chefs_active[@chef_j].address
+            .row.chef
+              -if @chefs_active[@chef_j].address2 != ""
+                i.material-icons.chefs.prefix location_on
+                =< @chefs_active[@chef_j].address2
+            .row.chef
+              .col.s6.left_chef_city
+                i.material-icons.chefs.prefix location_city
+                =< @chefs_active[@chef_j].zip
+              .col.s6
+                = link_to toggle_active_chef_path(@chefs_active[@chef_j]), method: :post
+                  btn.waves-effect.toggle_button.waves-light.btn Toggle
+            .row.chef
+              .col.left_chef_city
+                i.material-icons.chefs.prefix location_city
+                =< @chefs_active[@chef_j].city
+              .col
+                i.material-icons.chefs.prefix location_on
+                =< @chefs_active[@chef_j].state
+                -@chef_j += 1
+        - unless @chef_j > @chefs_active_count
+          .col.s12.m5.l3.recipe.offset-m1.offset-l1
+            .image.chef_page
+              .row.chef
+                .col.s7.m12.left_chef_city
+                  i.material-icons.chefs perm_identity
+                  =< @chefs_active[@chef_j].first_name
+                  =< @chefs_active[@chef_j].last_name
+                .col.s5.m12.left_chef_city
+                  i.material-icons.chefs phone
+                  =< @chefs_active[@chef_j].phone
+              .row.chef
+                i.material-icons.chefs location_on
+                =< @chefs_active[@chef_j].address
+              .row.chef
+                -if @chefs_active[@chef_j].address2 != ""
+                  i.material-icons.chefs.prefix location_on
+                  =< @chefs_active[@chef_j].address2
+              .row.chef
+                .col.s6.left_chef_city
+                  i.material-icons.chefs.prefix location_city
+                  =< @chefs_active[@chef_j].zip
+                .col.s6
+                  = link_to toggle_active_chef_path(@chefs_active[@chef_j]), method: :post
+                    btn.waves-effect.toggle_button.waves-light.btn Toggle
+              .row.chef
+                .col.left_chef_city
+                  i.material-icons.chefs.prefix location_city
+                  =< @chefs_active[@chef_j].city
+                .col
+                  i.material-icons.chefs.prefix location_on
+                  =< @chefs_active[@chef_j].state
+                  -@chef_j += 1
+          - unless @chef_j > @chefs_active_count
+            .col.s12.m5.l3.recipe.offset-m1.offset-l1
+              .image.chef_page
+                .row.chef
+                  .col.s7.m12.left_chef_city
+                    i.material-icons.chefs perm_identity
+                    =< @chefs_active[@chef_j].first_name
+                    =< @chefs_active[@chef_j].last_name
+                  .col.s5.m12.left_chef_city
+                    i.material-icons.chefs phone
+                    =< @chefs_active[@chef_j].phone
+                .row.chef
+                  i.material-icons.chefs location_on
+                  =< @chefs_active[@chef_j].address
+                .row.chef
+                  -if @chefs_active[@chef_j].address2 != ""
+                    i.material-icons.chefs.prefix location_on
+                    =< @chefs_active[@chef_j].address2
+                .row.chef
+                  .col.s6.left_chef_city
+                    i.material-icons.chefs.prefix location_city
+                    =< @chefs_active[@chef_j].zip
+                  .col.s6
+                    = link_to toggle_active_chef_path(@chefs_active[@chef_j]), method: :post
+                      btn.waves-effect.toggle_button.waves-light.btn Toggle
+                .row.chef
+                  .col.left_chef_city
+                    i.material-icons.chefs.prefix location_city
+                    =< @chefs_active[@chef_j].city
+                  .col
+                    i.material-icons.chefs.prefix location_on
+                    =< @chefs_active[@chef_j].state
+                    -@chef_j += 1
+
 /    #test1.col.s12
 /      .chefs.center-align
 /        - if @chefs_inactive.count > 0
