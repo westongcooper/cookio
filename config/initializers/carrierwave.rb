@@ -4,6 +4,6 @@ CarrierWave.configure do |config|
       aws_access_key_id:     ENV['AWS_KEY'],                        # required
       aws_secret_access_key: ENV['AWS_SECRET'],                        # required
   }
-  config.fog_directory  = 'cookio-pics'                          # required
+  config.fog_directory  = 'cookie-pics'                          # required
   config.fog_public     = false                                        # optional, defaults to true
 end
