@@ -7,8 +7,8 @@ animate = function(){
     accordion : true // A setting that changes the collapsible behavior to expandable instead of the default accordion style
   });
   var options = [
-    {selector: '.finger', offset: 1000, callback: "Materialize.fadeInImage('#staggered-text')" },
-    {selector: '.finger', offset: 1000, callback: "Materialize.showStaggeredList('#staggered-image')" }
+    {selector: '#bitme', offset: 800, callback: "Materialize.showStaggeredList('#staggered-text')" },
+    {selector: '#bitme', offset: 800, callback: "Materialize.showStaggeredList('#staggered-image')" }
   ];
   Materialize.scrollFire(options);
 };

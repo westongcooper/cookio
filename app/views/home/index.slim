@@ -44,38 +44,38 @@
         .col.l3.pointer
           li.finger
             h4#res Click create a reservation.
-            / = image_tag('pointer.png')
-        .col.l3.form
-          li.form
-            h4#paper.center-align Fill in the details.
-            / = image_tag('form.png')
-        .col.l3.head  
-          li.head
-            h4#brain.center-align  Sit back and relax.
-            / = image_tag('head.png')
-        .col.l3.hat    
-          li.hat
-            h4#cap.center-align  Our chef will come to you.
-            / = image_tag('stamp-alone.png')
-          
-      .row#staggered-image.col.offset-8m
-        .col.l3.pointer
-          li.finger
-            / h4#res Click create a reservation.
             = image_tag('pointer.png')
         .col.l3.form
           li.form
-            / h4#paper.center-align Fill in the details.
+            h4#paper.center-align Fill in the details.
             = image_tag('form.png')
         .col.l3.head  
           li.head
-            / h4#brain.center-align  Sit back and relax.
+            h4#brain.center-align  Sit back and relax.
             = image_tag('head.png')
         .col.l3.hat    
           li.hat
-            / h4#cap.center-align  Our chef will come to you.
-            = image_tag('stamp-alone.png')      
-            / p Now hiring chefs! #{link_to 'Click Here', new_chef_path}
+            h4#cap.center-align  Our chef will come to you.
+            = image_tag('stamp-alone.png')
+          
+      / .row#staggered-image.col.offset-8m
+      /   .col.l3.pointer
+      /     li.finger
+      /       / h4#res Click create a reservation.
+      /       = image_tag('pointer.png')
+      /   .col.l3.form
+      /     li.form
+      /       / h4#paper.center-align Fill in the details.
+      /       = image_tag('form.png')
+      /   .col.l3.head  
+      /     li.head
+      /       / h4#brain.center-align  Sit back and relax.
+      /       = image_tag('head.png')
+      /   .col.l3.hat    
+      /     li.hat
+      /       / h4#cap.center-align  Our chef will come to you.
+      /       = image_tag('stamp-alone.png')      
+      /       / p Now hiring chefs! #{link_to 'Click Here', new_chef_path}
 
 / #howto
 /   .inner
