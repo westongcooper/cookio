@@ -23,6 +23,7 @@
 // require_tree .
 
 function start_js() {
+  console.log("start_js");
   var notice = $('span.notice').text();
   if (notice != ""){
     Materialize.toast(notice, 3000, 'toast_notice');

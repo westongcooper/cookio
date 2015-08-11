@@ -8,8 +8,8 @@
 # require 'bcrypt'
 include ActionView::Helpers
 require './db/zip_city'
-num_users = 600
-num_reservations = 600
+num_users = 200
+num_reservations = 200
 reservation_factor = num_users/num_reservations
 def get_diet
   diet = []
@@ -151,8 +151,14 @@ reservations = 1
     end
   end
 end
-10.times do
-  Recipe.create(title:Faker::Lorem.sentence,
-                ingredients:Faker::Lorem.words(8),
-                recipe:Faker::Lorem.sentence(25))
+3.times do
+  Recipe.create(title:'Chicken With Salad',
+                ingredients: '["chicken", " salad", " veggies", " dressing"]',
+                recipe:'Id kielbasa deserunt pork andouille qui proident brisket. Ground round landjaeger cillum, lorem brisket hamburger excepteur. Brisket flank minim, et mollit cupim andouille quis ground round.')
+  Recipe.create(title:'Steak and Potatoes',
+                ingredients: '["Steak", " Potatoes", " Butter"]',
+                recipe:'FeId kielbasa deserunt pork andouille qui proident brisket. Ground round landjaeger cillum, lorem brisket hamburger excepteur. Brisket flank minim, et mollit cupim andouille quis ground round.')
+  Recipe.create(title:'Baked Chicken',
+                ingredients: '["chicken", " salad", " veggies", " dressing"]',
+                recipe:'Id kielbasa deserunt pork andouille qui proident brisket. Ground round landjaeger cillum, lorem brisket hamburger excepteur. Brisket flank minim, et mollit cupim andouille quis ground round.')
 end

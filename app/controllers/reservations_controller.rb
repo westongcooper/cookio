@@ -47,8 +47,10 @@ class ReservationsController < ApplicationController
         :description => 'Rails Stripe customer',
         :currency    => 'usd'
       )
-      redirect_to @user, flash:{notice: 'Created reservation'}
-    else
+      respond_to do |format|  ## Add this
+        format.json { render json: @reservation, status: :ok}
+        ## Other format
+      end              else
       redirect_to :back, flash:{notice:' You were not charged please make sure required fields are filled'}
     end
   end
