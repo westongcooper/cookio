@@ -211,11 +211,11 @@
 
     // height: 500px;
     // width: 5%;
-    margin-left: 35%;
+    margin-left: 35vw;
     // margin-right: auto;
-    position:relative;
-    top: 10%;
-    margin-top: 38%;
+    position:absolute;
+    top: 1vw;
+    margin-top: 38vw;
     // -webkit-transition: top 1.5s;
     // -moz-transition: top 1.5s;
     // -o-transition: top 1.5s;
@@ -260,25 +260,34 @@
 
 .cook{
   text-align: center;
+  padding-bottom: 15px;
 }
 
 .pointer {
   // padding-top: 50px;
   padding-bottom: 50px;
+  position: relative;
+  padding-left: 35px;
 
 }
 
 .form{
   padding-bottom: 50px;
+  position: relative;
+  padding-left: 50px;
 }
 
 .head{
   padding-bottom: 50px;
+  position: relative;
+  padding-left: 35px;
 }
 
 .hat {
   // width: 50%;
   // height: 50%;
+  position: relative;
+  padding-left: 35px;
   padding-bottom: 50px;
   // -webkit-animation: animation 3500ms linear both;
   // animation: animation 3500ms linear both;
@@ -286,21 +295,31 @@
 
 #res {
   padding-bottom: 10px;
+
+  position: relative;
+
+  // top: 50px;
   font-family: "Gotham-condensed"
 }
 
 #paper{
   padding-bottom: 10px;
+  // position: relative;
+  // top: 50px;
   font-family: "Gotham-condensed"
 }
 
 #brain {
   padding-bottom: 10px;
+  // position: relative;
+  // top: 50px;
   font-family: "Gotham-condensed"
 }
 
 #cap {
   padding-bottom: 10px;
+  // position: relative;
+  // top: 50px;
   font-family: "Gotham-condensed"
 }
 
@@ -453,6 +472,22 @@ button.submit_button {
   margin-top: 20px;
 
 }
+
+
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #40c4ff;
+  box-shadow: 0 1px 0 0 #40c4ff;
+}
+
+.input-field input[type=password].valid {
+  border-bottom: 1px solid #40c4ff;
+  box-shadow: 0 1px 0 0 #40c4ff;
+}
+
+
+
+
 span.date{
   margin-right:1.5rem;
 }
@@ -470,6 +505,7 @@ span.tab{
 span.address_header{
   font-weight:bold;
 }
+
 
 @-webkit-keyframes animation {
   0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -300, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -300, 0, 0, 1); }
