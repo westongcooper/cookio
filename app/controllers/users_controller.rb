@@ -24,10 +24,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user_reservations = Reservation.user(current_user)
-    @user_old_reservations = Reservation.user_old(current_user)
-    @user = current_user
+    @reservations = Reservation.user(current_user)
+    # @user_old_reservations = Reservation.user_old(current_user)
     @profile = current_user
+    @num_rows = @reservations.count
+    @i = 0
   end
 
   def update

@@ -3,36 +3,92 @@
     .row.l12.recipe_1image
       =image_tag @reservation.recipe.image, class: 'responsive_single_img'
     .row.reservation_1info
-      .rh3
-        |Chef:
-        - if @reservation.chef_id
-          span
-            =@reservation.chef.first_name
-        - else
-          span
-            | TBD
-      .rh3
-        |Date:
-        span
-          =@reservation.date.to_date.to_formatted_s :long_ordinal
-      .rh3
-        |Time:
-        span
-          =@reservation.time
-      .rh3
-        |Plates:
-        span
-          =@reservation.plates
+      .row.rh3
+        .col
+          span.tab
+          |Chef:
+          - if @reservation.chef_id
+            span
+              =@reservation.chef.first_name
+          - else
+            span
+              | TBD
+      .row.rh3
+        .col.s6
+          span.tab
+          |Date:
+          span.date
+            =@reservation.date.to_date.to_formatted_s :short
+        .col.s6
+          span.tab
+          |Time:
+          span.time
+            =@reservation.time
+      /.rh3
+      /  |Plates:
+      /  span
+      /    =@reservation.plates
     .row.recipe_1info
       ul.collapsible.recipe data-collapsible="accordion"
         li
           .collapsible-header
             i.material-icons menu
-            =truncate(@reservation.recipe.title, escape: false, length: 29)
+            .rh3
+              |Customer:
+              span
+                =@reservation.user.first_name
           .collapsible-body.recipe_box
             .row
-              .recipe_foldout_title.fix
-                = @reservation.recipe.title
+              .recipe_foldout_title
+                = @reservation.user.name
+            .row.valign-wrapper.recipe_dropdown
+              .col.s12
+                .reservation_recipe
+                  span.address_header
+                    |Recipe:
+                  span
+                    =< @reservation.recipe.title
+            .row.valign-wrapper.recipe_dropdown
+              .col.s6
+                .reservation_city
+                  span.address_header
+                    |City:
+                  span
+                    =< @reservation.city
+              .col.s6
+                .reservation_state
+                  span.address_header
+                    |State:
+                    =< @reservation.state
+            .row.valign-wrapper.recipe_dropdown
+              .col.s6
+                .reservation_zip
+                  span.address_header
+                    |Zip:
+                  span
+                    =< @reservation.zip
+              .col.s6
+                .reservation_plates
+                  span.address_header
+                    |Plates:
+                  span
+                    =< @reservation.plates
+            .row.valign-wrapper.recipe_dropdown
+              .col
+                .reservation_address
+                  span.address_header
+                    |Address:
+                  span
+                    =< @reservation.address
+              .col
+                .reservation_address2
+                  =< @reservation.address2
+        li
+          .collapsible-header
+            i.material-icons menu
+            .rh3
+              =truncate(@reservation.recipe.title, escape: false, length: 29)
+          .collapsible-body.recipe_box
             .row.valign-wrapper.recipe_dropdown
               .col.s5
                 = content_tag :div do

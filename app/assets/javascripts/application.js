@@ -24,6 +24,7 @@
 
 function start_js() {
   console.log("start_js");
+  $('ul.tabs').tabs();
   $(".button-collapse").sideNav();
   var notice = $('span.notice').text();
   if (notice != ""){
