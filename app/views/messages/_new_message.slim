@@ -1,0 +1,6 @@
+= form_for @new_message do |f|
+  .input-field.col.m12.s12.valign-wrapper
+    i.material-icons.prefix.valign.edit_message
+      |border_color
+    = f.text_field :message
+    = f.hidden_field :reservation_id, value: @reservation.id

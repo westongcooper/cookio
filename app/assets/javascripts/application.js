@@ -24,6 +24,7 @@
 
 function start_js() {
   console.log("start_js");
+  $(".button-collapse").sideNav();
   var notice = $('span.notice').text();
   if (notice != ""){
     Materialize.toast(notice, 3000, 'toast_notice');

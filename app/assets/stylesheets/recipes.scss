@@ -24,6 +24,14 @@ div.image img{
     margin-right:10px;
   }
 }
+h2.recipe{
+  margin-bottom:1rem;
+}
+h6.recipe_link{
+  margin-top:0;
+  margin-bottom:20px;
+  border-bottom: dashed #85D2FF 1px;
+}
 .recipe_foldout_title{
   padding:10px;
   font-size:1.3rem;
@@ -67,7 +75,7 @@ img.responsive-img{
     margin-left: 1.8% !important;
   }
   .reservation_1messages{
-    border-left:dotted dimgray 1px;
+    border-left:dotted #666 2px;
     min-height:500px;
     margin-left:1.5% !important;
   }
@@ -95,10 +103,12 @@ img.responsive-img{
 .reservation_1info{
   padding: 0px 1rem;
 }
-.message_container{
-  border-bottom: dotted dimgray 1px;
+.message_container_user{
+  border-bottom: 1.8px dashed #38E8B2;
+  padding-left:0.5rem;
 }
 
-.message_content_chef{
-  background:#e1e1e1;
+.message_container_chef{
+  border-bottom:1.8px dashed #85D2FF;
+  padding-left:0.5rem;
 }

@@ -1,19 +1,14 @@
 nav
   .nav-wrapper
-    .logo_wrapper
-      = link_to root_path, class:'logo_link brand-logo center'
-        = image_tag 'name_logo.png', alt: 'Link to Home with logo', class: 'nav_logo'
-      a.button-collapse href='#' data-activities= "mobile-demo"
-        i.material-icons
-          |menu
+    = link_to root_path, class:'logo_link brand-logo left'
+      = image_tag 'name_logo.png', alt: 'Link to Home with logo', class: 'nav_logo'
+    a.button-collapse.right href='#' data-activities= "mobile-demo"
+      i.material-icons
+        |menu
     ul.right.hide-on-med-and-down
-      / li
-      /   == link_to 'Mobile', home_mobile_path
+      li
+        => link_to 'Recipes', recipes_path
       -if is_admin?
-        li
-          => link_to 'admin', recipes_path
-        li
-          = link_to 'new recipe', new_recipe_path
         li
           = link_to 'Chefs', chefs_path
       -if no_one_logged_in?
@@ -37,14 +32,10 @@ nav
             = link_to 'My Account', (@chef || @user), class:"My_Account"
         li
           = link_to 'Sign Out', logout_path
-    ul.side-nav#mobile-demo
-      / li
-      /   == link_to 'Mobile', home_mobile_path
+    ul#mobile-demo.side-nav
+      li
+        => link_to 'Recipes', recipes_path
       -if is_admin?
-        li
-          => link_to 'admin', recipes_path
-        li
-          = link_to 'new recipe', new_recipe_path
         li
           = link_to 'Chefs', chefs_path
       -if no_one_logged_in?
@@ -65,8 +56,8 @@ nav
       -if someone_logged_in?
         -if not is_admin?
           li
-            = link_to 'My Account', (@chef || @user), class:"My_Account"
+            = link_to 'My Account', (@chef || @user), class: "My_Account"
         li
-          = link_to 'Sign Out', logout_path
+            = link_to 'Sign Out', logout_path
 span.notice
   = notice

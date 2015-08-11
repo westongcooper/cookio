@@ -51,7 +51,6 @@ class CreateUsers < ActiveRecord::Migration
         t.belongs_to :user, show: true
         t.belongs_to :chef, show: true
         t.belongs_to :reservation, show: true, null:false
-        t.string :subject, null:false
         t.text :message, null:false
         t.timestamps null: false
     end

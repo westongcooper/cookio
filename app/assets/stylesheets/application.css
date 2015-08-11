@@ -150,3 +150,14 @@ ul .straighten{
     float: right;
     margin-top: 5px;
 }
+.container .row{
+    margin-left:-0.5rem;
+    margin-right:-0.5rem;
+}
+h5.message-title{
+    padding-bottom: 10px;
+    border-bottom: dotted #0A99EB 2px;
+}
+/*div.inner{*/
+    /*background:#E0E0E0;*/
+/*}*/

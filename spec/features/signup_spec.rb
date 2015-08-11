@@ -5,7 +5,7 @@ feature 'Creating User' do
     # visit the User sign up
     visit '/'
     # puts page.body
-    click_link 'New User'
+    click_link('New User', match: :first)
     expect(page).to have_content('Join The Party')
     # fill out the bits of the form that we need.
     fill_in 'Email', with: 'sean@cookio.com'
@@ -26,7 +26,7 @@ feature 'Creating Chef' do
   scenario 'Chef signs up' do
     # visit the Chef sign up
     visit '/'
-    click_link 'New Chef'
+    click_link('New Chef', match: :first)
     expect(page).to have_content('Apply to be a Chef')
     # fill out the bits of the form that we need.
     fill_in 'Email', with: 'seandachef@cookio.com'
@@ -44,6 +44,6 @@ feature 'Creating Chef' do
     click_button 'send'
     # puts page.source
     # expect the page that we're sent to have a specific text
-    expect(page).to have_content('Available reservations')
+    expect(page).to have_content('Available Reservations')
    end
 end

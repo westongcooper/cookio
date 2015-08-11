@@ -1,8 +1,7 @@
 
 
 animate = function(){
-  console.log('working?');
-  console.log('recipes?');
+  console.log('animate');
   $('.collapsible').collapsible({
     accordion : true // A setting that changes the collapsible behavior to expandable instead of the default accordion style
   });

@@ -1,16 +1,18 @@
 class ReservationsController < ApplicationController
   before_action :set_user, only: [:new, :create]
   before_action :require_logged_in
-  before_action :require_chef, only: :index
+  before_action :require_chef, only: [:index,:update]
   before_action :belongs_to_or_nil_or_admin, only: :show
-  before_action :belongs_to_user_or_admin, only: :destroy
+  before_action :belongs_to_user_or_admin, only: [:destroy]
 
   include ApplicationHelper
   def index
-    @chef_reservations = Reservation.chef(current_chef)
+    # @chef_reservations = Reservation.chef(current_chef)
     # @chef_old_reservations = Reservation.chef_old(current_chef)
-    @available_reservations = Reservation.available
+    @reservations = Reservation.available
     @chef = Chef.find(session[:chef_id])
+    @num_rows = (@reservations.count - 1)
+    @i = 0
     # byebug
   end
 
@@ -20,15 +22,11 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    if current_user
-      @reservation = current_user.reservations.find(params[:id])
-    elsif current_chef
-      @reservation = Reservation.find(params[:id])
-    end
+    @reservation = Reservation.find(params[:id])
     @messages = Message.where(reservation_id: params[:id]).includes(:user, :chef)
     @user = @reservation.user
     @chef = @reservation.chef
-    @new_reservations_message = Message.new
+    @new_message = Message.new
   end
 
   def create
@@ -60,7 +58,7 @@ class ReservationsController < ApplicationController
     @reservation = reservation
     if reservation.update(chef_id:current_chef.id)
       ReservationMailer.reservation_reserved(@reservation).deliver_now
-      redirect_to :back, flash:{notice:"Reservation Confirmed"}
+      redirect_to @reservation, flash:{notice:"Reservation Confirmed"}
     end
   end
 

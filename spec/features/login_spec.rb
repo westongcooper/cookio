@@ -6,11 +6,11 @@ feature 'Chef authentication' do
   end
   scenario 'can log in from the index' do
     visit '/'
-    click_link 'Chef Login'
+    click_link('Chef Login', match: :first)
     expect(page).to_not have_content('Create Chef')
     fill_in 'Email', with: @chef.email
     fill_in 'Password', with: '123'
-    click_button 'Log in'
+    click_button 'send'
     expect(page).to have_content("#{@chef.first_name} you are logged in as a chef")
     end
 end
@@ -22,11 +22,11 @@ feature 'User authentication' do
   end
   scenario 'can log in from the index' do
     visit '/'
-    click_link 'User Login'
+    click_link('User Login', match: :first)
     expect(page).to_not have_content('Create User')
     fill_in 'Email', with: @user.email
     fill_in 'Password', with: '2'
-    click_button 'Log in'
+    click_button 'send'
     expect(page).to have_content("you are logged in")
     end
 end

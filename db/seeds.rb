@@ -124,12 +124,10 @@ reservations = 1
         if i % 2 == 0
           m = Message.create(chef_id:c.id,
                              reservation_id:r.id,
-                             subject:Faker::Lorem.sentence,
                              message:Faker::Hacker.say_something_smart)
         else
           m = Message.create(user_id:u.id,
                              reservation_id:r.id,
-                             subject:Faker::Lorem.sentence,
                              message:Faker::Hacker.say_something_smart)
         end
       end

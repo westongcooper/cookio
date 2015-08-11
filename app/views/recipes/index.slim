@@ -1,1 +1,5 @@
+h2.center.recipe Recipes
+h6.center.recipe_link
+  -if is_admin?
+    = link_to 'new recipe', new_recipe_path
 =render 'recipes/show_recipes'
