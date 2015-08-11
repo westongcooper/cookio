@@ -8,6 +8,7 @@ feature 'User Logs in and creates reservation' do
     visit '/'
     click_link('User Login', match: :first)
     expect(page).to_not have_content('Create User')
+    select 'Ex vitae quo est.', from: 'reservation[recipe]'
     fill_in 'Email', with: @user.email
     fill_in 'Password', with: '2'
     click_button 'send'
