@@ -18,7 +18,6 @@ print_stuff2 = function(){
   console.log('animate');
 };
 becomeChef = function(){
-  Materialize.toast('Now Hiring Chefs!', 3000, 'toast_notice');
-  Materialize.toast('<span>Now Hiring Chefs!</span><a class=&quot;btn-flat yellow-text&quot; href=/chefs/new>JOIN<a>', 5000)
+  Materialize.toast('<span>Now Hiring Chefs!&nbsp;</span><a class=&quot;btn-flat yellow-text&quot; href=/chefs/new> JOIN<a>', 200000)
 };
 $(document).on('ready page:load', animate);

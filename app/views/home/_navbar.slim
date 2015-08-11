@@ -15,9 +15,6 @@ nav
           = link_to 'New User', new_user_path
       li
         -if no_one_logged_in?
-          = link_to 'New Chef', new_chef_path
-      li
-        -if no_one_logged_in?
           = link_to 'Chef Login', login_chef_path
       li
         -if no_one_logged_in?
@@ -47,9 +44,6 @@ nav
       li
         -if no_one_logged_in?
           = link_to 'New User', new_user_path
-      li
-        -if no_one_logged_in?
-          = link_to 'New Chef', new_chef_path
       li
         -if no_one_logged_in?
           = link_to 'Chef Login', login_chef_path

@@ -528,12 +528,16 @@ span.tab{
 span.address_header{
   font-weight:bold;
 }
-btn.toggle_button{
+.btn.toggle_button{
  background-color: #0288d1;
-
 }
-
-
+div.toast a{
+  color: #f4ff81;
+}
+.span.toast{
+  margin-right:0.7rem;
+  font-weight:bold !important;
+}
 @-webkit-keyframes animation {
   0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -300, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -300, 0, 0, 1); }
   0.13% { -webkit-transform: matrix3d(3.905, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -293.463, 0, 0, 1); transform: matrix3d(3.905, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -293.463, 0, 0, 1); }
