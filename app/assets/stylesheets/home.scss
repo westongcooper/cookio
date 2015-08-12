@@ -94,6 +94,9 @@ a.close{
       padding-bottom: 0.5rem;
     }
   }
+  div.select-wrapper{
+    font-size:13px !important;
+  }
   .cook{
     border-bottom: dashed dimgrey 2px;
     padding-bottom: 1rem !important;
@@ -326,6 +329,8 @@ h2.recipes{
 
 .message_content{
   margin-bottom:0.5rem;
+  margin-top:0.5rem;
+  font-size:1.5rem;
 }
 
 
