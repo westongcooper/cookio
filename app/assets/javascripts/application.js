@@ -18,12 +18,16 @@
 // require Materialize/cards
 //= require reservation
 //= require animation
-//= require validation.js
+//= require validation
 // require Materialize/sideNav
 // require recipes
 // require_tree .
 
 function start_js() {
+  $('.datepicker').datepicker({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
   console.log("start_js");
   $('ul.tabs').tabs();
   $(".button-collapse").sideNav();
@@ -47,10 +51,7 @@ function start_js() {
 }
 
 $(function() {
-  $('.datepicker').datepicker({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15 // Creates a dropdown of 15 years to control year
-})});
+  });
 
 $(document).on('ready page:load', start_js);
 
