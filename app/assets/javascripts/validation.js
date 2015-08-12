@@ -14,7 +14,6 @@ var validations_new_chef = function(){
     first_name: $('input.validate.first_name').val(),
     last_name: $('input.validate.last_name').val(),
     address: $('input.validate.address').val(),
-    address2: $('input.validate.address2').val(),
     city: $("input.validate.city").val(),
     state: $("input.validate.state").val(),
     zip: $("input.validate.zip").val(),
