@@ -111,7 +111,7 @@ payAction = function () {
             name: 'Cookio',
             description: 'short description',
             amount: total,
-            image: '/assets/stripehat.png'
+            image: '/assets/images/stripehat.png'
         });
     });
 };
