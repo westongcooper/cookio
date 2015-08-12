@@ -110,8 +110,8 @@ payAction = function () {
         handler.open({
             name: 'Cookio',
             description: 'short description',
-            amount: total,
-            image: '/assets/images/stripehat.png'
+            amount: total
+            //image: '/assets/images/stripehat.png'
         });
     });
 };
