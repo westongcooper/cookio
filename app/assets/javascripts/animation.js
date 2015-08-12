@@ -7,8 +7,8 @@ animate = function(){
     accordion : true // A setting that changes the collapsible behavior to expandable instead of the default accordion style
   });
   var options = [
-    {selector: '#icons_animate', offset: 800, callback: "Materialize.showStaggeredList('#icons_animate')" },
-    {selector: '#how_cookio_animate', offset: 600, callback: "Materialize.fadeInImage('#how_cookio_animate')" },
+    {selector: '#icons_animate', offset: 300, callback: "Materialize.showStaggeredList('#icons_animate')" },
+    {selector: '#how_cookio_animate', offset: 200, callback: "Materialize.fadeInImage('#how_cookio_animate')" },
     {selector: '#cookio_animate', offset: 0, callback: "becomeChef()" }
   ];
   Materialize.scrollFire(options);

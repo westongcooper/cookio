@@ -90,10 +90,45 @@ a.close{
       border-bottom: none;
       padding-bottom: none;
     }
+    li.icons{
+      padding-bottom: 0.5rem;
+    }
   }
   .cook{
     border-bottom: dashed dimgrey 2px;
     padding-bottom: 1rem !important;
+    font-size: 2rem;
+  }
+  h4.icon_text{
+    font-size:1.5rem;
+    margin-top:0.4rem !important;
+    margin-bottom:1rem !important;
+  }
+  .how_cookio{
+    margin-top:4vh;
+  }
+  .animations{
+    width:90%
+  }
+  .icon_title {
+    height: 4rem;
+  }
+  .brain_box{
+    float:right !important;
+    border-bottom:0 !important;
+  }
+  li .cap{
+    margin-top: 1rem;
+  }
+  li.details{
+    padding-bottom:1rem !important;
+  }
+  .icon_title {
+    height: 4em !important;
+  }
+  .small_arrow{
+    position: relative;
+    bottom: 2rem;
   }
 }
 .row.arrows{

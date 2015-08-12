@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     if @user
       session[:user_id] = @user.id
       if @user.id == 1
-        redirect_to root_path, flash:{notice:'you are logged in as a admin'}
+        redirect_to chefs_path, flash:{notice:'you are logged in as a admin'}
       else
         redirect_to new_reservation_path(@user), flash:{notice:"#{@user.first_name} you are logged in as a user"}
       end
