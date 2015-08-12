@@ -36,7 +36,125 @@
 /*===================================
 ============= Services ==============
 ===================================*/
+.spash_screen{
+  background-image: url(https://s3.amazonaws.com/cookie-pics/guy.jpg);
+  height: 95vh;
+    background-position: center center;
+    position:relative;
+    //top: 50px;
 
+    //background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    border-bottom: solid dimgray 6px;
+}
+.how_cookio{
+  font-size:4rem;
+  color: dimgrey;
+}
+.animations, h2.recipes, h2.recipe{
+  font-family: Gotham-bold, sans-serif;
+}
+#icons_animate li{
+  opacity: 0;
+}
+#how_cookio_animate{
+  opacity:0;
+}
+a.close{
+    position: relative;
+    left: 75px;
+    bottom: 15px;
+}
+.animations{
+  height:100vh;
+  width:80%;
+  margin: auto
+}
+.row.text{
+  text-align: center;
+}
+.how_to_cookio_bar{
+  border-bottom: solid dimgray 6px;
+}
+@media only screen and (max-width: 600px) {
+  .row.arrows{
+    margin-top: 0 !important;
+  }
+  .row.text {
+    .icons {
+      border-bottom: dashed dimgrey 2px;
+      padding-bottom: 3rem;
+    }
+    .icons:last-child {
+      border-bottom: none;
+      padding-bottom: none;
+    }
+  }
+  .cook{
+    border-bottom: dashed dimgrey 2px;
+    padding-bottom: 1rem !important;
+  }
+}
+.row.arrows{
+  margin-top:4vh;
+}
+.row.title{
+  padding-top:60vh;
+}
+h2.recipes{
+
+}
+.main_cookio{
+  color:#F0F0F5;
+  font-size:4rem;
+  margin:auto;
+  text-align:center;
+  font-family: ZonaPro, sans-serif;
+  letter-spacing: 0.5rem;
+}
+.row.arrows .col.l4{
+  text-align:center;
+  i{
+    font-size:6rem;
+    color: #0288d1;
+  }
+  i.whiteish{
+  color:#F0F0F5;
+  }
+}
+.right_nav_bar{
+  margin-right:2rem;
+}
+.cook {
+  border-bottom: dashed dimgrey 2px;
+}
+.icon_title{
+  height:6em;
+}
+.cook.center{
+  margin:auto;
+}
+@media only screen and (min-width: 600px){
+  .row.text {
+    padding-top: 5vh;
+  }
+  .how_cookio{
+    margin-top:10vh;
+  }
+
+}
+.center_text{
+  margin:auto;
+  width:auto;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    /* The file size of this background image is 93% smaller
+       to improve page load speed on mobile internet connections */
+    //background-image: url(images/background-photo-mobile-devices.jpg);
+  }
+}
 #services {
     padding-top: 1px;
     height: 100vh;
@@ -48,18 +166,14 @@
     background-image: url(https://s3.amazonaws.com/cookie-pics/guy.jpg);
 
     /* Background image is centered vertically and horizontally at all times */
-    background-position: center center;
 
     /* Background image doesn't tile */
-    background-repeat: no-repeat;
 
     /* Background image is fixed in the viewport so that it doesn't move when
        the content's height is greater than the image's height */
-    background-attachment: fixed;
 
     /* This is what makes the background image rescale based
        on the container's size */
-    background-size: cover;
 
     /* Set a background color that will be displayed
        while the background image is loading */
@@ -171,7 +285,7 @@
   body {
     /* The file size of this background image is 93% smaller
        to improve page load speed on mobile internet connections */
-    background-image: url(images/background-photo-mobile-devices.jpg);
+    //background-image: url(images/background-photo-mobile-devices.jpg);
   }
 }
 

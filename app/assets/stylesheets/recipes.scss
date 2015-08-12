@@ -30,7 +30,7 @@ h2.recipe{
 h6.recipe_link{
   margin-top:0;
   margin-bottom:20px;
-  border-bottom: dashed #85D2FF 1px;
+  border-bottom: dashed #85D2FF 2px;
 }
 .recipe_foldout_title{
   padding:10px;
@@ -48,11 +48,14 @@ img.responsive-img{
     margin-left: 1.8% !important;
   }
   a.logo_link{
-    margin-left:1rem;
+    margin-left:2rem;
   }
   .nav_right_buttons{
     margin-right:1rem;
   }
+}
+.hamburger{
+  margin-right:1rem;
 }
 @media screen and (max-width: 600px) {
   .container.recipe_card{

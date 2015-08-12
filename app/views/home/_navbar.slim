@@ -2,9 +2,9 @@ nav
   .nav-wrapper
     = link_to root_path, class:'logo_link brand-logo left'
       = image_tag 'name_logo.png', alt: 'Link to Home with logo', class: 'nav_logo'
-    a.button-collapse.right data-activates="mobile-demo" href="#"
+    a.button-collapse.right.hamburger data-activates="mobile-demo" href="#"
       i.material-icons.top menu
-    ul.right.hide-on-med-and-down
+    ul.right.hide-on-med-and-down.right_nav_bar
       li
         => link_to 'Recipes', recipes_path
       li

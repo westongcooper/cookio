@@ -61,10 +61,11 @@ h6.center.recipe_link
                       .reservation_address2
                         =< @reservations[@i].address2
                 -unless @reservations[@i].chef_id
-                  .row
-                    .confirm_reservation.center
-                      = link_to make_confirmation_path(@reservations[@i]), method: :put
-                        button.waves-effect.waves-light.btn Confirm
+                  -if current_chef.active
+                    .row
+                      .confirm_reservation.center
+                        = link_to make_confirmation_path(@reservations[@i]), method: :put
+                          button.waves-effect.waves-light.btn Confirm
                 - @i += 1
     - unless @i >= @num_rows
       .col.s12.m5.l3.recipe.offset-m1.offset-l1
@@ -126,10 +127,11 @@ h6.center.recipe_link
                       .reservation_address2
                         =< @reservations[@i].address2
                 -unless @reservations[@i].chef_id
-                  .row
-                    .confirm_reservation.center
-                      = link_to make_confirmation_path(@reservations[@i]), method: :put
-                        button.waves-effect.waves-light.btn Confirm
+                  -if current_chef.active
+                    .row
+                      .confirm_reservation.center
+                        = link_to make_confirmation_path(@reservations[@i]), method: :put
+                          button.waves-effect.waves-light.btn Confirm
                 - @i += 1
       - unless @i >= @num_rows
         .col.s12.m5.l3.recipe.offset-m1.offset-l1
@@ -191,8 +193,9 @@ h6.center.recipe_link
                       .reservation_address2
                         =< @reservations[@i].address2
                 -unless @reservations[@i].chef_id
-                  .row
-                    .confirm_reservation.center
-                      = link_to make_confirmation_path(@reservations[@i]), method: :put
-                        button.waves-effect.waves-light.btn Confirm
+                  -if current_chef.active
+                    .row
+                      .confirm_reservation.center
+                        = link_to make_confirmation_path(@reservations[@i]), method: :put
+                          button.waves-effect.waves-light.btn Confirm
                 - @i += 1

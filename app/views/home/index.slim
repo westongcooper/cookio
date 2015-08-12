@@ -1,103 +1,76 @@
-/ 
-/ .index-photo
-/   = image_tag('http://i.huffpost.com/gen/1475945/images/o-COOKING-AT-HOME-facebook.jpg')
-/ / .index-photo
-/ /   = image_tag('https://s3.amazonaws.com/cookie-pics/how_do_you_cookio.png')
-/ / 
-/ div.text
-/   h1.become  HOW DO YOU COOKIO?
-/   h3.click click make reservation.
-/   h3.details fill in details
-/ 
-/ .become-a-chef
-/   p Become a Chef! #{link_to 'Click Here', new_chef_path}
-/ .make-a-reservation
-/   - if current_user
-/     = link_to 'Make a Reservation', new_reservation_path
-/   - elsif current_chef
-/     = link_to 'All Reservations', reservations_path
-/ - @recipes.each do |r|
-/   - if current_user
-/     = link_to image_tag( r.image, height: '300', width: '300' ), new_reservation_path(r.id)
-/   - else
-/     = link_to image_tag(r.image, height: '300', width: '300'), login_user_path
+.row
+  .spash_screen
+    .row.title
+      .main_cookio#cookio_animate
+        |Cookio
+    .row.arrows
+      .col.l4.hide-on-small-only
+        i.material-icons.whiteish keyboard_arrow_down
+      .col.l4.s12
+        i.material-icons.whiteish keyboard_arrow_down
+      .col.l4.hide-on-small-only
+        i.material-icons.whiteish keyboard_arrow_down
+.row.how_to_cookio_bar
+  .animations
+    ul.row.how_cookio#how_cookio_animate
+      li.col.l8.offset-l2.s12
+        .cook How To Cookio?
+    ul.row.text#icons_animate
+      li.col.l3.s12.icons
+        .icon_title
+          h4#res Click create a reservation.
+        = image_tag 'pointer.png', class: 'resonsive-img'
+      li.col.l3.s12.icons
+        .icon_title
+          h4#paper Fill in the details.
+        = image_tag 'form.png', class: 'resonsive-img'
+      li.col.l3.s12.icons
+        .icon_title
+          h4#brain  Sit back and relax.
+        = image_tag 'head.png', class: 'resonsive-img'
+      li.col.l3.s12.icons
+        .icon_title
+          h4#cap  Our chef will come to you.
+        = image_tag 'stamp-alone.png', class: 'resonsive-img'
+    .row.arrows
+      .col.l4.hide-on-small-only
+        i.material-icons keyboard_arrow_down
+      .col.l4.s12
+        i.material-icons keyboard_arrow_down
+      .col.l4.hide-on-small-only
+        i.material-icons keyboard_arrow_down
+.row.recipes
+  h2.center.recipe Recipes
+  h6.center.recipe_link
+    -if is_admin?
+      = link_to 'new recipe', new_recipe_path
+.row
+  =render 'recipes/show_recipes'
 
-///////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-#services.row.valign-wrapper
-  .col.s10.m4#bitme
-    = image_tag 'textwhite.png', class: "responsive-img"
-
-
-#howto
-  .inner
-    h1.cook HOW TO COOKIO
-    #hello.container
-      = image_tag('textwhite.png')
-      .row#staggered-text.col.offset-8m
-        .col.l3.pointer
-          li.finger
-            h4#res Click create a reservation.
-            = image_tag('pointer.png')
-        .col.l3.form
-          li.form
-            h4#paper.center-align Fill in the details.
-            = image_tag('form.png')
-        .col.l3.head  
-          li.head
-            h4#brain.center-align  Sit back and relax.
-            = image_tag('head.png')
-        .col.l3.hat    
-          li.hat
-            h4#cap.center-align  Our chef will come to you.
-            = image_tag('stamp-alone.png')
-          
-      / .row#staggered-image.col.offset-8m
-      /   .col.l3.pointer
-      /     li.finger
-      /       / h4#res Click create a reservation.
-      /       = image_tag('pointer.png')
-      /   .col.l3.form
-      /     li.form
-      /       / h4#paper.center-align Fill in the details.
-      /       = image_tag('form.png')
-      /   .col.l3.head  
-      /     li.head
-      /       / h4#brain.center-align  Sit back and relax.
-      /       = image_tag('head.png')
-      /   .col.l3.hat    
-      /     li.hat
-      /       / h4#cap.center-align  Our chef will come to you.
-      /       = image_tag('stamp-alone.png')      
-      /       / p Now hiring chefs! #{link_to 'Click Here', new_chef_path}
-
-            / = image_tag('form.png')
-    
-/ #howto
-/   .inner
-/     h1.cook HOW TO COOKIO
-/     #hello
-/         ul#staggered-test.col.offset-8m
-/           li.pointer
-/             = image_tag('pointer.png')
-/           li.form
-/             = image_tag('form.png')
-/           li.hand
-/             = image_tag('head.png')
-/           li.hat
-/             = image_tag('stamp-alone.png')
-
-.become-a-chef
-  p Now hiring chefs! #{link_to 'Click Here', new_chef_path}
-.make-a-reservation
-  - if @logged_in_user
-    = link_to 'Make a Reservation', new_reservation_path
-  - elsif @logged_in_chef
-    = link_to 'All Reservations', reservations_path
-=render 'recipes/show_recipes'
+/#services.row.valign-wrapper
+/  .col.s10.m4#bitme
+/    = image_tag 'textwhite.png', class: "responsive-img"
+/#howto
+/  .inner
+/    h1.cook HOW TO COOKIO
+/    #hello.container
+/      = image_tag('textwhite.png')
+/      .row#staggered-text.col.offset-8m
+/        .col.l3.pointer
+/          li.finger
+/        .col.l3.form
+/          li.form
+/        .col.l3.head
+/          li.head
+/        .col.l3.hat
+/          li.hat
+/
+/
+/.become-a-chef
+/  p Now hiring chefs! #{link_to 'Click Here', new_chef_path}
+/.make-a-reservation
+/  - if @logged_in_user
+/    = link_to 'Make a Reservation', new_reservation_path
+/  - elsif @logged_in_chef
+/    = link_to 'All Reservations', reservations_path
+/=render 'recipes/show_recipes'
