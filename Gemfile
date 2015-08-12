@@ -47,16 +47,16 @@ gem 'materialize-sass'
 group :production do
   gem 'rails_12factor'
   ######
-  gem 'byebug'
-  gem 'better_errors'
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'minitest-rails'
-  gem 'spring'
-  gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
-  gem 'rspec-rails'
-  gem 'capybara-screenshot'
+  # gem 'byebug'
+  # gem 'better_errors'
+  # # Access an IRB console on exception pages or by using <%= console %> in views
+  # # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # gem 'minitest-rails'
+  # gem 'spring'
+  # gem 'shoulda-matchers'
+  # gem 'factory_girl_rails'
+  # gem 'rspec-rails'
+  # gem 'capybara-screenshot'
   ######
 
 end
