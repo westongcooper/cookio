@@ -62,7 +62,7 @@
                 .center
                   = link_to @reservations[@i]
                     button.waves-effect.waves-light.btn More Info
-            -unless @reservations[@i].chef_id
+            -unless @reservations[@i].chef_id || current_user
               .row
                 .confirm_reservation.center
                   = link_to make_confirmation_path(@reservations[@i]), method: :put
@@ -131,7 +131,7 @@
                   .center
                     = link_to @reservations[@i]
                       button.waves-effect.waves-light.btn More Info
-              -unless @reservations[@i].chef_id
+              -unless @reservations[@i].chef_id || current_user
                 .row
                   .confirm_reservation.center
                     = link_to make_confirmation_path(@reservations[@i]), method: :put
@@ -200,7 +200,7 @@
                     .center
                       = link_to @reservations[@i]
                         button.waves-effect.waves-light.btn More Info
-                -unless @reservations[@i].chef_id
+                -unless @reservations[@i].chef_id || current_user
                   .row
                     .confirm_reservation.center
                       = link_to make_confirmation_path(@reservations[@i]), method: :put
