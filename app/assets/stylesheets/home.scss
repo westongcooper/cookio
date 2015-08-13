@@ -131,8 +131,22 @@ a.close{
   }
   .small_arrow{
     position: relative;
-    bottom: 2rem;
+    bottom: 3rem;
   }
+  select#reservation_plates{
+    width:115%;
+  }
+  select#reservation_time{
+    width:115%;
+  }
+}
+select#reservation_plates{
+  position:relative;
+  top:3.2px;
+}
+select#reservation_time{
+  position:relative;
+  top:3.2px;
 }
 .row.arrows{
   margin-top:4vh;

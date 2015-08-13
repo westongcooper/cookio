@@ -21,9 +21,6 @@ nav
           = link_to 'User Login', login_user_path
       li
         -if !is_admin? && current_user
-          = link_to 'User Login', login_user_path
-      li
-        -if !is_admin? && current_user
           = link_to 'New Reservation', reservations_new_path
       li
         -if current_chef
@@ -49,9 +46,6 @@ nav
           = link_to 'Chef Login', login_chef_path
       li
         -if no_one_logged_in?
-          = link_to 'User Login', login_user_path
-      li
-        -if !is_admin? && current_user
           = link_to 'User Login', login_user_path
       li
         -if !is_admin? && current_user
