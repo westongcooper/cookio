@@ -17,6 +17,7 @@ class ChefsController < ApplicationController
 
   def create
     @chef = Chef.new chef_params
+    @chef.email = chef_params[:email].downcase
     if @chef.save
       session[:chef_id] = @chef.id
       ChefMailer.welcome_email(@chef).deliver_now

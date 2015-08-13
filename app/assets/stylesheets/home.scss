@@ -142,6 +142,9 @@ a.close{
     right:10px;
   }
 }
+input#user_state,input#chef_state,input#reservation_state{
+  width:105%
+}
 select#reservation_plates{
   position:relative;
   top:3.2px;

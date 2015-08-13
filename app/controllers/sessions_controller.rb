@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   end
   def login_user
     @user = User.
-      find_by(email: params[:email]).
+      find_by(email: params[:email].downcase).
       try(:authenticate, params[:password])
 
     if @user
@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
 
   def login_chef
     @chef = Chef.
-      find_by(email: params[:email]).
+      find_by(email: params[:email].downcase).
       try(:authenticate, params[:password])
 
     if @chef
