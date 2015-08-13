@@ -159,8 +159,11 @@ select#reservation_time{
 .row.title{
   padding-top:60vh;
 }
-h2.recipes{
-
+.admin_recipe_buttons span.edit{
+  margin-right:3px;
+}
+.admin_recipe_buttons span.destroy{
+  margin-right:5px;
 }
 ul#mobile-demo a{
   border-bottom: dashed #0288d1 2px;
